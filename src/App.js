@@ -18,7 +18,7 @@ function App() {
         <Header />
         <SideBar />
         <div className='content'>
-          <Route path='/general' component={General} />
+          <Route exact path='/general' component={General} />
           <Route path='/dg' component={DGgeneral} />
         </div>
         <Footer />

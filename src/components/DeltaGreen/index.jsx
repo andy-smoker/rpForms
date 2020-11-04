@@ -9,7 +9,7 @@ export const DGgeneral = () => {
     return (
         <div className={style.mane}>
             <div className={style.nav}>
-                <NavLink className={style.nav_btn} to={`/${prefix}/about`}>
+                <NavLink className={style.nav_btn} to={`/${prefix}`}>
                     <button> About </button>
                 </NavLink>
                 <NavLink to={`/${prefix}/form`}>
