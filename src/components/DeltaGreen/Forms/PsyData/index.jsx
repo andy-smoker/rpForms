@@ -5,10 +5,11 @@ import { Bonds } from './Bonds'
 import { Flaws } from './Flaws'
 import { Motiv } from './Motiv'
 
-export const PsyData = () => {
+export const PsyData = (props) => {
     return (
+        
         <div className={`${fStyle.psy} ${style.main}`}>
-            <Bonds />
+            <Bonds cha={props.cha}/>
             <Motiv />
             <Flaws />
         </div>

@@ -27,9 +27,8 @@ export const Stat = (prop) => {
                 <div className={`${style.dis} ${fStyle.cell}`}> DISTINGTING DEATURE </div>
             </div>
             {stats.map(e => {
-                let v, c = StatRow(e)
+                let _, c = StatRow(e)
                 val[e.tag] = c.val
-                console.log(val)
                 return (
                     c.code
                 )
