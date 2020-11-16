@@ -6,23 +6,19 @@ import { StatRow } from './StatRow'
 
 export const Stat = (props) => {
     debugger
-    let stats = props.actions({
-        d:"statData",
-        l:"stats",
-        s:props.s
-    }, null, props.state)
+    let rows = props.actions({page:"statData", list:"stats", state: props.state })
     debugger
     return (    
         <div className={sdStyle.stat}>
             <div className={style.stat_row}>
-                <div className={`${style.cell} ${fStyle.cell}`}> STATISTIC </div>
-                <div className={`${style.cell} ${fStyle.cell}`}> SCORE </div>
+                <div className={`${style.cell} ${fStyle.cell}`}> ПРАМЕТР </div>
+                <div className={`${style.cell} ${fStyle.cell}`}> ЗНАЧ. </div>
                 <div className={`${style.cell} ${fStyle.cell}`}> x5=% </div>
-                <div className={`${style.dis} ${fStyle.cell}`}> DISTINGTING DEATURE </div>
+                <div className={`${style.dis} ${fStyle.cell}`}> ОСОБЕННОСТЬ </div>
             </div>
-            {stats.map((stat) => {
+            {rows.map(e => {
                 return (
-                    <StatRow  actions={props.actions} state={props.state} stat={stat} dispatch={props.dispatch}/>
+                    <StatRow  formStyle={props.formStyle} areaStyle={props.style} style={style} values={e} state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
                 )
             })}
         </div>

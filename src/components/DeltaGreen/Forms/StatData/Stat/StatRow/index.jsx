@@ -1,39 +1,51 @@
-import React, {useState} from 'react'
-import style from './../index.module.css'
-import fStyle from '../../../index.module.css'
+import React, { useState } from 'react'
 import d from '../../../../../../dispatch/geltagreen'
-import actions from '../../../../../../redux/DeltaGreen/actions'
 
 export const StatRow = (props) => {
     debugger
-    let stat = props.stat
-    const [percent, setPercent] = useState(0)
-    
     return (
 
-<div className={style.stat_row}>
-    <div className={`${style.cell} ${fStyle.cell}`}> <p>{stat.view}</p> </div>
-            {/* <div className={`${style.score} ${fStyle.cell}`}> <input type="number" min='0' name={stat.tag} onChange={e => { setPercent(e.target.value) }} /></div> */}
-            <div className={`${style.score} ${fStyle.cell}`}> 
-            {
-                props.actions({
-                    d:"statData",
-                    l:"stats",
-                    s:props.s
-                }, stat.tag, props.state).count
-            }
-            <button onClick={() =>  d({
-                tag: stat.tag,
-                list: "stat",
-                state: props.state,
-                dispatch: props.dispatch,
-                actions: props.actions,
-                value: stat.count + 1 
-                })}> + </button>
-            <button> - </button>
+        <div className={props.style.stat_row}>
+            <div className={`${props.style.cell} ${props.formStyle.cell}`}> <p>{props.values.view}</p> </div>
+            {/* <div className={`${props.style.score} ${props.formStyle.cell}`}> <input type="number" min='0' name={stat.tag} onChange={e => { setPercent(e.target.value) }} /></div> */}
+            <div className={`${props.style.score} ${props.formStyle.cell}`}>
+                {props.values.count}
+                <button onClick={() => {
+                if (props.values.count < 20){
+                    props.dispatcher({
+                    state: props.state,
+                    actions: props.actions,
+                    dispatcher: props.dispatcher,
+                    list: "stat_change",
+                    tag: props.values.tag,
+                    value: props.values.count + 1
+                })}
+                }}> + </button>
+                <button onClick={() => {
+                    if (props.values.count > 0) {
+                        props.dispatcher({
+                            state: props.state,
+                            actions: props.actions,
+                            dispatcher: props.dispatcher,
+                            list: "stat_change",
+                            tag: props.values.tag,
+                            value: props.values.count - 1
+                        })
+                    }
+                }}> - </button>
             </div>
-            <div className={`${style.cell} ${fStyle.cell}`}>  {percent * 5}%  </div>
-            <div className={`${style.dis} ${fStyle.cell}`}>  <input type='text' name={'dis_' + stat.tag} /> </div>
+            <div className={`${props.style.cell} ${props.formStyle.cell}`}>  {props.values.count * 5}%  </div>
+            <div className={`${props.style.dis} ${props.formStyle.cell}`}>  <input type='text' 
+            onInput={e => props.dispatcher({
+                dispatch: props.state.dispatch,
+                state: props.state,
+                actions: props.actions,
+                dispatcher: props.dispatcher,
+                list: "stat_dist",
+                tag: props.values.tag,
+                value: e.target.value
+            })}/> 
+            </div>
         </div>
     )
 

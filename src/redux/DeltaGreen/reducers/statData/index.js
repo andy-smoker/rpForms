@@ -18,6 +18,12 @@ const stats = (s, a) => {
                     e.count = a.value
                 }
             })
+            case action.CHANGE_DIST:
+            s.map(e => {
+                if (e.tag === a.tag) {
+                    e.dist = a.value
+                }
+            })
             return s
         case action.GET_STAT:
             return get(a.tag)

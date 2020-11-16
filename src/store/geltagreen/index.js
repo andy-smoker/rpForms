@@ -1,5 +1,6 @@
 
 function getElemet(props) {
+    debugger
     const state = props.state.getState()
     let tmp
     switch (props.page) {
@@ -25,6 +26,7 @@ function getElemet(props) {
                     return tmp
                 }
                 tmp.map(e => {
+                    debugger
                     if (e.tag === props.tag){
                         return ret=e
                     }

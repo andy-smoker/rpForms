@@ -12,7 +12,7 @@ export const Form = (props) => {
         <div className={style.chsh}>
             <Title text='ПЕРСОНАЛЬНЫЕ ДАННЫЕ' style={style.title} />
             <PerData style={style} state={props.state} actions={props.actions} dispatcher={props.dispatcher} />
-            <Title text='СТАТИСТИЧЕСКАЯ ИНФОРМАЦИЯ' />
+            <Title text='СТАТИСТИЧЕСКАЯ ИНФОРМАЦИЯ' style={style.title} />
             <StatData style={style} state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
             {/* <Title text='ПСИХОЛОГИЧЕСКАЯ ИНФОРМАЦИЯ' />
             <PsyData  />

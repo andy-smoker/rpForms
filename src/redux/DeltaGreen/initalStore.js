@@ -2,12 +2,12 @@ const state = {
     form: {
         statData: {
             stats: [
-                { view: "Сила (STR)", tag: "strg", count: 0 },
-                { view: "Тело (CON)", tag: "con", count: 0 },
-                { view: "Ловкость (DEX)", tag: "dex", count: 0 },
-                { view: "Интеллект (INT)", tag: "int", count: 0 },
-                { view: "Воля (POW)", tag: "pow", count: 0 },
-                { view: "Харизма (CHA)", tag: "cha", count: 0 }
+                { view: "Сила (STR)", tag: "strg", count: 0, dist: "" },
+                { view: "Тело (CON)", tag: "con", count: 0,  dist: "" },
+                { view: "Ловкость (DEX)", tag: "dex", count: 0,  dist: "" },
+                { view: "Интеллект (INT)", tag: "int", count: 0,  dist: "" },
+                { view: "Воля (POW)", tag: "pow", count: 0,  dist: "" },
+                { view: "Харизма (CHA)", tag: "cha", count: 0,  dist: "" }
             ],
             attribs: {
                 hp: { value: "", tag: "hp" },

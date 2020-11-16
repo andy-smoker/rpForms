@@ -8,14 +8,9 @@ export const StatData = (props) => {
 
     return (
         (<div className={`${style.statdata} ${fStyle.stat}`}>
-            <Stat style={style} state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
+            <Stat formStyle={props.style} style={style} state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
 
             {/* <Attr val={props.value.attribs} /> */}
-
-            <div className={`${style.look} ${fStyle.cell}`}>
-                <p>Внешность</p>
-                <textarea name={fStyle.title} />
-            </div>
         </div>)
     )
 }

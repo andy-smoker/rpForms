@@ -1,21 +1,30 @@
 import actions from '../../actions'
 
-function CHANGE_STAT (tag, value) {
+const CHANGE = (tag, value) => {
     return {
-        type: actions.CHANGE,
+        type: actions.stat.CHANGE_STAT,
         tag: tag,
         value: value,
     }
 }
 
-function GET_STAT(tag) {
+const  GET = (tag) => {
     return {
-        type: actions.GET,
+        type: actions.stat.GET_STAT,
         tag: tag,
     }
 }
 
+const DIST = (tag, value) => {
+    return {
+        type: actions.stat.CHANGE_DIST,
+        tag: tag,
+        value: value,
+    }
+}
+
 export default {
-    CHANGE_STAT,
-    GET_STAT
+    CHANGE,
+    GET,
+    DIST
 }
