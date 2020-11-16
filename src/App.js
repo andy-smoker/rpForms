@@ -1,31 +1,22 @@
 import React from 'react';
 import './App.css';
-import { DGgeneral } from './components/DeltaGreen';
-import General from './components/Content'
 import { Header } from './components/Header';
 import { SideBar } from './components/SideBar';
 import { Footer } from './components/Footer';
-import { BrowserRouter, Route} from 'react-router-dom';
+import Content from './components/Content';
 
-
-let isAuth = false
-
-function App() {
-  
+function App(props) {
   return (
-    <BrowserRouter>
+
       <div className='main_page'>
         <Header />
         <SideBar />
-        <div className='content'>
-          <Route exact path='/general' component={General} />
-          <Route path='/dg' component={DGgeneral} />
-        </div>
+        <Content state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
         <Footer />
         <div>
         </div>
       </div>
-    </BrowserRouter>
+
   );
 }
 

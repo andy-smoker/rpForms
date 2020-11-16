@@ -4,7 +4,8 @@ import { Form } from './Forms'
 import About from './About'
 import style from './index.module.css'
 
-export const DGgeneral = () => {
+export const DGgeneral = (props) => {
+    //debugger
     const prefix = "dg"
     return (
         <div className={style.mane}>
@@ -19,7 +20,8 @@ export const DGgeneral = () => {
                     <button> LIST </button>
                 </NavLink>
             </div>
-            <Route path={`/${prefix}/form`} component={Form} />
+            <Route path={`/${prefix}/form`} render={() => <Form state={props.state} 
+            actions={props.actions} dispatcher={props.dispatcher}/>} />
             <Route path={`/${prefix}/about`} component={About} />
         </div>
     )
