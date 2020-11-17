@@ -7,7 +7,6 @@ import { StatRow } from './StatRow'
 export const Stat = (props) => {
     debugger
     let rows = props.actions({page:"statData", list:"stats", state: props.state })
-    debugger
     return (    
         <div className={sdStyle.stat}>
             <div className={style.stat_row}>
@@ -16,9 +15,10 @@ export const Stat = (props) => {
                 <div className={`${style.cell} ${fStyle.cell}`}> x5=% </div>
                 <div className={`${style.dis} ${fStyle.cell}`}> ОСОБЕННОСТЬ </div>
             </div>
-            {rows.map(e => {
+            {rows.map(row => {
                 return (
-                    <StatRow  formStyle={props.formStyle} areaStyle={props.style} style={style} values={e} state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
+                    <StatRow  formStyle={props.formStyle} areaStyle={props.style} style={style} 
+                    values={row} state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
                 )
             })}
         </div>

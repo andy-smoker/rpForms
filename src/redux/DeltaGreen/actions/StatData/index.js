@@ -1,9 +1,12 @@
 const CHANGE_STAT = "CHANGE_STAT"
 const GET_STAT = "GET_STAT"
 const CHANGE_DIST = "CHANGE_DIST"
+const CHANGE_ATTR = "CHANGE_ATTR"
+
 
 export default {
     CHANGE_STAT,
     GET_STAT,
-    CHANGE_DIST
+    CHANGE_DIST,
+    CHANGE_ATTR
 }

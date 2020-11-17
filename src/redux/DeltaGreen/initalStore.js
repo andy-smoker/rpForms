@@ -9,12 +9,12 @@ const state = {
                 { view: "Воля (POW)", tag: "pow", count: 0,  dist: "" },
                 { view: "Харизма (CHA)", tag: "cha", count: 0,  dist: "" }
             ],
-            attribs: {
-                hp: { value: "", tag: "hp" },
-                wp: { value: "", tag: "wp" },
-                san: { value: "", tag: "san" },
-                bp: { value: "", tag: "bp" }
-            }
+            attribs: [
+                {title:"ЖИЗНЬ (HP)", value:"", tag:"hp", parent:"con" },
+                {title:"СИЛА ВОЛИ (WP)", value:"", tag:"wp", parent:"pow"},
+                {title:"РАССУДОК (SAN)", value: "", tag:"san", parent:"pow"},
+                {title:"ТОЧКА СЛОВМА (BP)", value: "", tag:"bp", parent:"pow"}
+            ]
         },
 
         perData: [
