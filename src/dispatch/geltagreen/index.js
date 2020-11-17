@@ -10,8 +10,20 @@ function mapDispatch(props) {
         case "stat_dist":
             props.state.dispatch(actions.statData.DIST(props.tag, props.value))
             break
+        case "attrib_change":
+            props.state.dispatch(actions.statData.ATTRIBS(props.tag, props.value))
+            return
         case "per_change":
             props.state.dispatch(actions.perData.CHANGE(props.tag, props.value))
+            break
+        case "bond_change":
+            props.state.dispatch(actions.psyData.BOND(props.tag, props.value))
+            break
+        case "bond_add":
+            props.state.dispatch(actions.psyData.ADD_BOND())
+            break
+        case "bond_del":
+            props.state.dispatch(actions.psyData.DELETE_BOND())
             break
         default:
             break

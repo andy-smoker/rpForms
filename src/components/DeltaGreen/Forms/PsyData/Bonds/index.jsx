@@ -1,53 +1,48 @@
 import React, { useState } from 'react'
 import style from './index.module.css'
-import fStyle from '../../index.module.css'
+import {BondsRow} from './BondsRow'
 
 export const Bonds = (props) => {
     const [bonds, setBonds] = useState([
         { id: 0 }
     ])
-
+    debugger
+    let rows = props.actions({page:"psyData", tag:"bonds", state: props.state })
     return (
-        <div className={fStyle.bonds}>
+        <div className={props.formStyle.bonds}>
             <div className={style.main}>
-                <div className={`${fStyle.cell}`} >
+                <div className={`${props.formStyle.cell}`} >
                     <p> СВЯЗИ </p>
                 </div>
-                <div className={`${fStyle.cell}`} >
+                <div className={`${props.formStyle.cell}`} >
                     <p> ОЧКИ </p>
                 </div>
             </div>
             <div className={style.add}>
-                <div className={`${fStyle.cell}`} >
-                    <button onClick={e => {
-                        setBonds([...bonds, { id: bonds.length }])
-                    }}> + </button>
+                <div className={`${props.formStyle.cell}`} >
+                    <button onClick={() => props.dispatcher({
+                    state: props.state,
+                    actions: props.actions,
+                    dispatcher: props.dispatcher,
+                    list: "bond_add",
+                })}> + </button>
 
-                    <button onClick={e => {
-                        setBonds(bonds.slice(0, bonds.length - 1))
-                    }}> - </button>
+                    <button onClick={() => props.dispatcher({
+                    state: props.state,
+                    actions: props.actions,
+                    dispatcher: props.dispatcher,
+                    list: "bond_del",
+                })}> - </button>
                 </div>
             </div>
-            {bonds.map(e => {
+            {rows.map((row, serial) => {
                 return (
-                    < BondsRow tag={e.id} score={props.cha} />
+                    < BondsRow serial={serial} formStyle={props.formStyle} style={style} values={row} state={props.state}
+                     actions={props.actions} dispatcher={props.dispatcher} />
                 )
             })}
 
 
-        </div>
-    )
-}
-
-const BondsRow = (props) => {
-    return (
-        <div className={style.main}>
-            <div className={`${fStyle.cell}`} >
-                <input type='text' name={'bond' + props.tag} />
-            </div>
-            <div className={`${fStyle.cell}`} >
-                <p > {props.score} </p>
-            </div>
         </div>
     )
 }

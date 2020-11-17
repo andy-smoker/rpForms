@@ -31,6 +31,9 @@ function getElemet(props) {
                 })
                 return ret
             }
+        case "psyData":
+            tmp = state.deltagreen.form[props.page][props.tag]
+            return tmp
         default:
             return 0
     }

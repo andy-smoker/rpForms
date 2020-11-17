@@ -14,9 +14,9 @@ export const Form = (props) => {
             <PerData style={style} state={props.state} actions={props.actions} dispatcher={props.dispatcher} />
             <Title text='СТАТИСТИЧЕСКАЯ ИНФОРМАЦИЯ' style={style.title} />
             <StatData style={style} state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
-            {/* <Title text='ПСИХОЛОГИЧЕСКАЯ ИНФОРМАЦИЯ' />
-            <PsyData  />
-            
+            <Title text='ПСИХОЛОГИЧЕСКАЯ ИНФОРМАЦИЯ' style={style.title}/>
+            <PsyData  style={style} state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
+            {/* 
             <Title text='НАБОР НАВЫКОВ' />
             <SkillSets skills={props.value.skills} points={props.value.skillsPoints}/> */}
             <button className={style.down}>

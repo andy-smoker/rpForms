@@ -31,8 +31,9 @@ const state = {
             {title:"OБРФЗОВАНИЕ",tag:"occup", value:'', type:"textarea"}
         ],
         psyData: {
+            
             bonds: [
-                { name: "", score: 0 }
+                {tag:0, value: "", score: 0, parent:"cha" }
             ],
             motiv: { text: "" },
             flaws: { voilence: 0 }

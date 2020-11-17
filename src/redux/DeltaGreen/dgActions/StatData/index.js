@@ -23,7 +23,16 @@ const DIST = (tag, value) => {
     }
 }
 
+const ATTRIBS = (tag, value) => {
+    return {
+        type: actions.stat.CHANGE_ATTR,
+        tag: tag,
+        value: value,
+    }
+}
+
 export default {
+    ATTRIBS,
     CHANGE,
     GET,
     DIST

@@ -4,6 +4,20 @@ import fStyle from '../../../index.module.css'
 
 const AttrRow = (props) => {
     let value = props.actions({page:"statData", list:"stats", tag:props.values.parent, state: props.state })
+    let max = MAX({
+        tag: props.values.tag,
+        value: value.count
+    })
+    
+    props.dispatcher({
+        state: props.state,
+        actions: props.actions,
+        dispatcher: props.dispatcher,
+        list: "attrib_change",
+        tag: props.values.tag,
+        value: max
+    })
+    
     debugger
     return (
         <div className={props.style.attr_row}>
@@ -11,13 +25,10 @@ const AttrRow = (props) => {
                 <p>{props.values.title}</p> 
             </div>
             <div className={` ${props.formStyle.cell}`}> 
-                <p name={'max'+props.values.tag} > {MAX({
-                    tag: props.values.tag,
-                    value: value.count
-                })} </p> 
+                <p name={'max'+props.values.tag} > {max} </p> 
             </div>
             <div className={`${props.formStyle.cell}`}> 
-                <input type='text'name={'curr'+props.values.tag}/> 
+                {/* <input type='text'name={'curr'+props.values.tag}/>  */}
             </div>
         </div>
     )

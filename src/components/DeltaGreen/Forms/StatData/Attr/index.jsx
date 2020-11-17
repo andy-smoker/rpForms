@@ -20,12 +20,6 @@ export const Attr = (props) => {
                     values={row} state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
                 )
             })}
-{/*             
-            < AttrRow name='ЖИЗНЬ (HP)' v={parseInt(props.val.hp)}/>
-            < AttrRow name='СИЛА ВОЛИ (WP)' v={parseInt(props.val.wp)}/>
-            < AttrRow name='РАССУДОК (SAN)' v={parseInt(props.val.san)*5}/>
-            < AttrRow name='ТОЧКА СЛОВМА (BP)' v={(parseInt(props.val.bp)*5)-(parseInt(props.val.pow))}/>
-             */}
         </div>
     )
 }

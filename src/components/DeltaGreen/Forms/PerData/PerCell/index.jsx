@@ -18,7 +18,6 @@ const Input = (props) => {
         case "text" :
             return <input type={props.values.type} name={props.values.tag} value={props.values.value}
             onInput={e => props.dispatcher({
-                dispatch: props.state.dispatch,
                 state: props.state,
                 actions: props.actions,
                 dispatcher: props.dispatcher,

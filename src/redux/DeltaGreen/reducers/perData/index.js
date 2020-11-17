@@ -6,23 +6,23 @@ export const perData = (s, a) => {
     switch (a.type) {
         case action.CHANGE_PER:
             s.map(e => {
-                debugger
                 if (e.tag === a.tag) {
                     if (Array.isArray(e.value)){
                         
                         let arr = e.value
                         arr.map(el => {
-                            debugger
                             if (el.value === a.value){
-                                el.check = true
+                                return el.check = true
                             } else {
-                                el.check = false
+                                return el.check = false
                             }
+                            
                         })
                     }else{
-                    e.value = a.value
+                        return e.value = a.value
                     }
                 }
+                return
             })
             return s
         case action.GET_PER:
@@ -36,6 +36,7 @@ export const perData = (s, a) => {
             if (e.tag === tag) {
                 return e.count
             }
+            return
         })
     }
 }

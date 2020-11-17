@@ -10,7 +10,6 @@ export const StatData = (props) => {
         (<div className={`${style.statdata} ${fStyle.stat}`}>
             <Stat formStyle={props.style} style={style} state={props.state} actions={props.actions} 
             dispatcher={props.dispatcher} />
-
             <Attr formStyle={props.style} style={style} state={props.state} actions={props.actions} 
             dispatcher={props.dispatcher} />
         </div>)

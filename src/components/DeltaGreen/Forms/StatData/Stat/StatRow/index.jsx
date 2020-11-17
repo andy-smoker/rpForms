@@ -11,15 +11,16 @@ export const StatRow = (props) => {
             <div className={`${props.style.score} ${props.formStyle.cell}`}>
                 {props.values.count}
                 <button onClick={() => {
-                if (props.values.count < 20){
-                    props.dispatcher({
-                    state: props.state,
-                    actions: props.actions,
-                    dispatcher: props.dispatcher,
-                    list: "stat_change",
-                    tag: props.values.tag,
-                    value: props.values.count + 1
-                })}
+                    if (props.values.count < 20) {
+                        props.dispatcher({
+                            state: props.state,
+                            actions: props.actions,
+                            dispatcher: props.dispatcher,
+                            list: "stat_change",
+                            tag: props.values.tag,
+                            value: props.values.count + 1
+                        })
+                    }
                 }}> + </button>
                 <button onClick={() => {
                     if (props.values.count > 0) {
@@ -35,16 +36,15 @@ export const StatRow = (props) => {
                 }}> - </button>
             </div>
             <div className={`${props.style.cell} ${props.formStyle.cell}`}>  {props.values.count * 5}%  </div>
-            <div className={`${props.style.dis} ${props.formStyle.cell}`}>  <input type='text' 
-            onInput={e => props.dispatcher({
-                dispatch: props.state.dispatch,
-                state: props.state,
-                actions: props.actions,
-                dispatcher: props.dispatcher,
-                list: "stat_dist",
-                tag: props.values.tag,
-                value: e.target.value
-            })}/> 
+            <div className={`${props.style.dis} ${props.formStyle.cell}`}>  <input type='text'
+                onInput={e => props.dispatcher({
+                    state: props.state,
+                    actions: props.actions,
+                    dispatcher: props.dispatcher,
+                    list: "stat_dist",
+                    tag: props.values.tag,
+                    value: e.target.value
+                })} />
             </div>
         </div>
     )
