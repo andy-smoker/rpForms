@@ -2,11 +2,10 @@
 function getElemet(props) {
     debugger
     const state = props.state.getState()
-    let tmp
+    let tmp = state.deltagreen.form[props.page]
     let ret
     switch (props.page) {
         case "perData":
-            tmp = state.deltagreen.form[props.page]
             if (props.tag === undefined) {
                 return tmp
             }
@@ -19,7 +18,10 @@ function getElemet(props) {
             return ret
 
         case "statData":
-            tmp = state.deltagreen.form[props.page][props.list]
+            if (props.list == undefined){
+                break
+            }
+            tmp = tmp[props.list]
             if (props.tag === undefined) {
                 return tmp
             } else {
@@ -32,7 +34,27 @@ function getElemet(props) {
                 return ret
             }
         case "psyData":
-            tmp = state.deltagreen.form[props.page][props.tag]
+            if (props.tag == undefined){
+                break
+            }
+            tmp = tmp[props.tag]
+            
+            return tmp
+
+
+        case "skills":
+            if (props.tag == undefined) {
+                return tmp
+            } else {
+                tmp.map(e => {
+                    if (e.tag == props.tag) {
+                        return ret = e
+                    }
+                    return
+                })
+            }
+            return ret
+        case "skillsPoints":
             return tmp
         default:
             return 0

@@ -25,17 +25,21 @@ function mapDispatch(props) {
         case "bond_del":
             props.state.dispatch(actions.psyData.DELETE_BOND())
             break
-            case "motiv_change":
-                props.state.dispatch(actions.psyData.CHANGE_MOTIV(props.value))
-                break
+        case "motiv_change":
+            props.state.dispatch(actions.psyData.CHANGE_MOTIV(props.value))
+            break
+        case "skill_mod":
+            props.state.dispatch(actions.skills.CHANGE_MOD(props.tag, props.value))
+            props.state.dispatch(actions.points.CHANGE({value:props.value, max:props.max}))
+            break
         default:
             break
     }
     renderApp({
-        state: props.state, 
+        state: props.state,
         store: props.actions,
         dispatcher: props.dispatcher
-      })
+    })
 }
 
 export default mapDispatch

@@ -16,9 +16,9 @@ export const Form = (props) => {
             <StatData style={style} state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
             <Title text='ПСИХОЛОГИЧЕСКАЯ ИНФОРМАЦИЯ' style={style.title}/>
             <PsyData  style={style} state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
-            {/* 
+             
             <Title text='НАБОР НАВЫКОВ' />
-            <SkillSets skills={props.value.skills} points={props.value.skillsPoints}/> */}
+            <SkillSets style={style} state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
             <button className={style.down}>
                 Save
             </button>

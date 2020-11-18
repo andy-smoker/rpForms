@@ -1,34 +1,52 @@
-import React, {useState} from 'react'
-import style from '../index.module.css'
-import fStyle from '../../index.module.css'
+import React, { useState } from 'react'
 
 export const SkillRow = (props) => {
-    const [val, setVal] = useState(0)
-    let points = props.points
-    let fart = props.skill.con + val * 20
-    if (fart > 80) {
-        fart = 80
-    }
-
+ 
     return (
-        <dev className={style.row} >
-            <dev className={`${fStyle.cell} ${style.cell}`}>
+        <dev className={props.style.row} >
+            <dev className={`${props.formStyle.cell} ${props.style.cell}`}>
                 <p>{props.skill.name}</p>
                 <div>
-                    {val}
+
                     <button onClick={() => {
-                        if (val < 4 && points > 0) { setVal(val + 1) }
-                        points -= 1
+                        
+                        props.dispatcher({
+                            state: props.state,
+                            dispatcher: props.dispatcher,
+                            actions: props.actions,
+                            list: "skill_mod",
+                            tag: props.skill.tag,
+                            value: 1,
+                            max: props.skill.mod + 1
+                        })
                     }}> + </button>
                     <button onClick={() => {
-                        if (val > 0) { setVal(val - 1) }
-                        points += 1
+                        props.dispatcher({
+                            state: props.state,
+                            dispatcher: props.dispatcher,
+                            actions: props.actions,
+                            list: "skill_mod",
+                            tag: props.skill.tag,
+                            value: -1,
+                            max: props.skill.mod - 1
+                        })
                     }}> - </button>
                 </div>
             </dev>
-            <dev className={`${fStyle.cell}`}>
-                <p>{fart}</p>
+            <dev className={`${props.formStyle.cell}`}>
+                <p>{UpdateCon( props.actions({page:"skills", tag:props.skill.tag, state:props.state}).con, props.skill.mod)}</p>
             </dev>
         </dev>)
 
+}
+
+const UpdateCon = (con, mod) => {
+    con = con + mod * 20
+    if (con > 80){
+        return 80
+    } else if (con < 0) {
+        return 0
+    } else {
+        return con
+    }
 }
