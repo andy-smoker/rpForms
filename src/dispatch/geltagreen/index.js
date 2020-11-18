@@ -25,6 +25,9 @@ function mapDispatch(props) {
         case "bond_del":
             props.state.dispatch(actions.psyData.DELETE_BOND())
             break
+            case "motiv_change":
+                props.state.dispatch(actions.psyData.CHANGE_MOTIV(props.value))
+                break
         default:
             break
     }

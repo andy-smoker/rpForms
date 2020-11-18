@@ -3,9 +3,15 @@ const CHANGE_BOND = "CHANGE_BOND"
 const DELETE_BOND = "DELETE_BOND"
 const GET_BOND = "GET_BOND"
 
+const CHANGE_MOTIV = "CHANGE_BOND"
+const GET_MOTIV = "GET_BOND"
+
 export default {
     ADD_BOND,
     CHANGE_BOND,
     DELETE_BOND,
-    GET_BOND
+    GET_BOND,
+
+    CHANGE_MOTIV,
+    GET_MOTIV
 }

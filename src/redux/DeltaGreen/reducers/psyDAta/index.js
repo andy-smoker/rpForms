@@ -19,7 +19,10 @@ export const psyData = (s, a) => {
                 break
         case action.DELETE_BOND :
             (s.bonds).pop()
+        case action.CHANGE_MOTIV:
+            s.bonds.motiv = a.value
             break
+        default: break
     }
     return s
 }
