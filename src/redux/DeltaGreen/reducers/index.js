@@ -10,11 +10,12 @@ export const form = (s, a) => {
             statData: statData(s.form.statData, a),
             perData: perData(s.form.perData, a),
             psyData: psyData(s.form.psyData, a),
-            skillsPoints: points(s.form.skillsPoints, a),
             skills: skills({
                 skills:s.form.skills,
                 points: s.form.skillsPoints
             }, a),
+            skillsPoints: points(s.form.skillsPoints, a),
+            
         }
     })
 }

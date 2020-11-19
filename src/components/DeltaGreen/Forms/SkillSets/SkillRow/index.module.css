@@ -1,0 +1,12 @@
+.cell{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    
+}
+
+.skill {
+    display: grid;
+    grid-template-areas: auto;
+
+    grid-template-columns: 80% 20%;
+}

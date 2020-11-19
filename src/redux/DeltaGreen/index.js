@@ -1,6 +1,4 @@
 import state from './initalStore'
-import actions from './actions'
-import active from './dgActions'
 import {form} from './reducers'
 
 const deltagreen = (s = state, action) => {
@@ -16,8 +14,5 @@ const deltagreen = (s = state, action) => {
     }*/
     
 }
-
-
-//export const stats = createStore (() => reducer.statReduce(state.deltagreen.form.statData.stats,null))
 
 export default deltagreen

@@ -15,6 +15,7 @@
 }
 
 .cell p {
+    font-size: 14px;
     margin: 2px;
 }
 
@@ -34,13 +35,22 @@
 .chsh {
     display: grid;
     grid-template-areas: 
-    'auto per per per'
-    'auto stat none psy'
-    'auto skill skill skill';
+    'tper per per per'
+    'tstat stat tpsy psy'
+    'tskill points points pattern'
+    'tskill skills skills skills';
 
     grid-template-columns: 5% 45% 5% 45%;
     grid-template-rows: auto;
     grid-gap: 2px;
+}
+
+.patter{
+    grid-area: pattern;
+}
+
+.points{
+    grid-area: points;
 }
 
 .per{
@@ -54,8 +64,15 @@
     grid-area: psy;
 }
 
-.skill{
-    grid-area: skill;
+.skills {
+    grid-area: skills;
+    display: grid;
+    grid-template-areas: 
+    'skills other';
+
+    
+    grid-template-rows: repeat(2,1fr);
+    grid-template-rows:  auto;
 }
 
 .down {

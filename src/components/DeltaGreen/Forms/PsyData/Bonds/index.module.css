@@ -1,11 +1,21 @@
-.main {
-    display: grid;
-
-    grid-template-columns: 80% 20%;
-    grid-template-rows: auto;
-    grid-gap: 2px;
+.add{
+    grid-area: add;
 }
 
-.add button{
-    margin-right: 10%;
+.name{
+    grid-area: name;
+}
+
+.score{
+    grid-area: score;
+}
+.row{
+    grid-area: auto;
+    display: grid;
+    grid-template: 
+    
+    'add add'
+    'name score';
+    grid-template-columns: 80% 20%;
+
 }

@@ -26,25 +26,9 @@ const DELETE_BOND = () => {
     }
 }
 
-const CHANGE_MOTIV = (value) => {
-    return {
-        type: actions.psy.CHANGE_MOTIV,
-        value: value
-    }
-}
-
-const GET_MOTIV = () => {
-    return {
-        type: actions.psy.GET_MOTIV,
-    }
-}
-
 export default {
     ADD_BOND,
     GET_BOND,
     DELETE_BOND,
-    BOND,
-
-    CHANGE_MOTIV,
-    GET_MOTIV
+    BOND
 }

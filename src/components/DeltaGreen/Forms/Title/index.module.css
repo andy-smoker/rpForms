@@ -1,0 +1,17 @@
+.per {
+    grid-area: tper ;
+}
+.stat {
+    grid-area: tstat;
+}
+.psy {
+    grid-area: tpsy;
+}
+.skills {
+    grid-area: tskill;
+}
+
+.points{
+    grid-area: points;
+}
+

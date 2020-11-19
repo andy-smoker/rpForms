@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
+import style from './index.module.css'
 
 export const SkillRow = (props) => {
  
     return (
-        <dev className={props.style.row} >
-            <dev className={`${props.formStyle.cell} ${props.style.cell}`}>
+        <dev className={style.skill} >
+            <dev className={`${props.formStyle.cell} ${style.cell}`}>
                 <p>{props.skill.name}</p>
                 <div>
 

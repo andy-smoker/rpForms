@@ -8,9 +8,9 @@ export const PsyData = (props) => {
     return (
         
         <div className={`${props.style.psy} ${style.main}`}>
-            <Bonds formStyle={props.style} style={style} state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
-            <Motiv formStyle={props.style} style={props.style} state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
-            <Flaws />
+            <Bonds formStyle={props.style} style={style.bonds} state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
+            <Motiv formStyle={props.style} style={style.motiv} state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
+            <Flaws formStyle={props.style} style={style.flaws}/>
         </div>
     )
 }

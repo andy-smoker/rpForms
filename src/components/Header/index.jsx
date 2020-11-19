@@ -10,9 +10,7 @@ export const Header = () => {
                 <img className={style.img} src={logo} />
             </div>
             <div className={style.middle}> Middle </div>
-            <div className={style.sigin}>
-                <Auth />
-            </div>
+            
         </header>
     )
 }

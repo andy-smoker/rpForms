@@ -3,7 +3,7 @@ import React from 'react'
 export const BondsRow = (props) => {
     let value = props.actions({ page: "statData", list: "stats", tag: props.values.parent, state: props.state })
     return (
-        <div className={props.style.main}>
+        <div className={props.style.row}>
             <div className={`${props.formStyle.cell}`} >
                 <input value={props.values.value} type='text' name={'bond' + props.serial} onInput={e => props.dispatcher({
                     state: props.state,

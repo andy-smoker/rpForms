@@ -9,7 +9,8 @@ export const PerData = (props) => {
     return (
         <div className={`${style.per_data} ${props.style.per}`}>
             {rows.map(e => {
-                return <PerCell formStyle={props.style} style={style} values={e} state={props.state} actions={props.actions} dispatcher={props.dispatcher} />
+                return <PerCell formStyle={props.style} style={style} values={e} 
+                state={props.state} actions={props.actions} dispatcher={props.dispatcher} />
             })}
         </div>
     )

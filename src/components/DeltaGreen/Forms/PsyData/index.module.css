@@ -1,9 +1,39 @@
 .main {
     display: grid;
-
+    grid-template-areas: 
+    'bonds'
+    'motiv'
+    'flaws';
+    grid-template-columns: 100%;
     grid-template-rows: auto;
+
+    
 }
 
-.cell {
-    height: 100%;
+.bonds {
+    display: grid;
+    grid-template-areas: 
+    auto;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(10,1fr);
+
+}
+
+.motiv {
+    display: grid;
+    grid-template-areas: 
+    'title'
+    'cell';
+    grid-template-rows: 30% 70%;
+    
+}
+
+.flaws {
+    display: grid;
+
+    grid-template-areas:
+    't t';
+
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(2,1fr);
 }
