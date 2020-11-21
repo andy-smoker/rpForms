@@ -17,11 +17,11 @@ const Input = (props) => {
     switch (props.values.type) {
         case "text" :
             return <input type={props.values.type} name={props.values.tag} value={props.values.value}
-            onInput={e => props.dispatcher({
+            onInput={e => props.dispatcher.per({
                 state: props.state,
                 actions: props.actions,
                 dispatcher: props.dispatcher,
-                list: "per_change",
+                list: "change",
                 tag: props.values.tag,
                 value: e.target.value
             })}/>
@@ -32,12 +32,12 @@ const Input = (props) => {
                     <div className={style.inputn}>
                         {e.title}
                         <input type={props.values.type} name={props.values.tag} value={e.value} checked={e.check} 
-                        onClick={() => props.dispatcher({
+                        onClick={() => props.dispatcher.per({
                             dispatch: props.state.dispatch,
                             state: props.state,
                             actions: props.actions,
                             dispatcher: props.dispatcher,
-                            list: "per_change",
+                            list: "change",
                             tag: props.values.tag,
                             value: e.value
                         })} />
@@ -45,12 +45,13 @@ const Input = (props) => {
                 )
             })
         case "textarea":
-            return <textarea name={props.values.tag} value={props.values.value} onInput={e => props.dispatcher({
+            return <textarea name={props.values.tag} value={props.values.value} 
+            onInput={e => props.dispatcher.per({
                 dispatch: props.state.dispatch,
                 state: props.state,
                 actions: props.actions,
                 dispatcher: props.dispatcher,
-                list: "per_change",
+                list: "change",
                 tag: props.values.tag,
                 value: e.target.value
             })}/>

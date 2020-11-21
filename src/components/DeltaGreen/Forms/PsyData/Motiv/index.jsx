@@ -10,10 +10,11 @@ export const Motiv = (props) => {
                 </div>
                 <div className={`${props.formStyle.cell} ${style.cell}`}>
                     <textarea onInput={e => {
-                        props.dispatcher({
+                        props.dispatcher.psy({
                             state: props.state,
                             dispatcher: props.dispatcher,
                             actions: props.actions,
+                            list: "motiv",
                             value: e.target.value
                         })
                     }} />

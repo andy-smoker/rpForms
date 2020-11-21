@@ -6,27 +6,30 @@ export const SkillRow = (props) => {
     return (
         <dev className={style.skill} >
             <dev className={`${props.formStyle.cell} ${style.cell}`}>
+                <input type='checkbox'  name={props.skill.tag} onClick={e=>{
+                    console.log(e.target.checked)
+                }}/>
                 <p>{props.skill.name}</p>
                 <div>
 
                     <button onClick={() => {
                         
-                        props.dispatcher({
+                        props.dispatcher.skill({
                             state: props.state,
                             dispatcher: props.dispatcher,
                             actions: props.actions,
-                            list: "skill_mod",
+                            list: "mod",
                             tag: props.skill.tag,
                             value: 1,
                             max: props.skill.mod + 1
                         })
                     }}> + </button>
                     <button onClick={() => {
-                        props.dispatcher({
+                        props.dispatcher.skill({
                             state: props.state,
                             dispatcher: props.dispatcher,
                             actions: props.actions,
-                            list: "skill_mod",
+                            list: "mod",
                             tag: props.skill.tag,
                             value: -1,
                             max: props.skill.mod - 1

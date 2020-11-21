@@ -12,11 +12,11 @@ export const StatRow = (props) => {
                 {props.values.count}
                 <button onClick={() => {
                     if (props.values.count < 20) {
-                        props.dispatcher({
+                        props.dispatcher.stat({
                             state: props.state,
                             actions: props.actions,
                             dispatcher: props.dispatcher,
-                            list: "stat_change",
+                            list: "score",
                             tag: props.values.tag,
                             value: props.values.count + 1
                         })
@@ -24,11 +24,11 @@ export const StatRow = (props) => {
                 }}> + </button>
                 <button onClick={() => {
                     if (props.values.count > 0) {
-                        props.dispatcher({
+                        props.dispatcher.stat({
                             state: props.state,
                             actions: props.actions,
                             dispatcher: props.dispatcher,
-                            list: "stat_change",
+                            list: "score",
                             tag: props.values.tag,
                             value: props.values.count - 1
                         })
@@ -37,11 +37,11 @@ export const StatRow = (props) => {
             </div>
             <div className={`${props.style.cell} ${props.formStyle.cell}`}>  {props.values.count * 5}%  </div>
             <div className={`${props.style.dis} ${props.formStyle.cell}`}>  <input type='text'
-                onInput={e => props.dispatcher({
+                onInput={e => props.dispatcher.stat({
                     state: props.state,
                     actions: props.actions,
                     dispatcher: props.dispatcher,
-                    list: "stat_dist",
+                    list: "dist",
                     tag: props.values.tag,
                     value: e.target.value
                 })} />

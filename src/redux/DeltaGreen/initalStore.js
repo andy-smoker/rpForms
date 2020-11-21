@@ -28,7 +28,7 @@ const state = {
                 {title:"Ж", value:"female", check:false}
             ], type:"radio"},
             {title:"ВНЕШНОСТЬ",tag:"look", value:'', type:"textarea"},
-            {title:"OБРФЗОВАНИЕ",tag:"occup", value:'', type:"textarea"}
+            {title:"OБРАЗОВАНИЕ",tag:"occup", value:'', type:"textarea"}
         ],
         psyData: {
             
@@ -38,7 +38,7 @@ const state = {
             motiv: { text: "" },
             flaws: { voilence: 0 }
         },
-        skillsPoints: {max: 4, current:4},
+        skillsPoints: {max: 8, current:8},
         skills: [
             { name: 'Бух.учет', tag: 'accounting', con: 10 , mod:0},
             { name: 'Бдительность', tag: 'alertness', con: 20, mod:0},
@@ -82,6 +82,33 @@ const state = {
             { name: 'Плаванье', tag: 'anthrop', con: 20,mod:0},
             { name: 'Драка', tag: 'combat', con: 40, mod:0},
             { name: 'Необъяснимое', tag: 'unnatural', con: 0, mod:0},
+        ],
+        patterns: [
+            {title: "", value:"none", check: true},
+            {title: "Антрополог", value:"anthrop", check: false},
+            {title: "Историк", value:"historian", check: false},
+            {title: "Компьютерщик", value:"comp", check: false},
+            {title: "Инженер", value:"engin", check: false},
+            {title: "Федерал", value:"federal", check: false},
+            {title: "Врач", value:"psysician", check: false},
+            {title: "Ученый", value:"scientist", check: false},
+            {title: "Специалист", value:"spcial", check: false},
+            {title: "Преступник", value:"criminal", check: false},
+            {title: "Стрелок", value:"fire", check: false},
+            {title: "Дипломат", value:"foreing", check: false},
+            {title: "Аналитик разведки", value:"analyst", check: false},
+            {title: "Офицер разведки", value:"", check: false},
+            {title: "Юрист", value:"lawyer", check: false},
+            {title: "Бизнесмен", value:"buisiness", check: false},
+            {title: "Медиа", value:"media", check: false},
+            {title: "Парамедик", value:"paramedic", check: false},
+            {title: "Мед.брат/сестра", value:"nurse", check: false},
+            {title: "Пилот", value:"pilot", check: false},
+            {title: "Судоводитель", value:"sailor", check: false},
+            {title: "Офицер полиции", value:"police", check: false},
+            {title: "Организатор", value:"manager", check: false},
+            {title: "Солдат", value:"slosger", check: false},
+            {title: "Моряк", value:"marine", check: false},
         ]
     }
 }

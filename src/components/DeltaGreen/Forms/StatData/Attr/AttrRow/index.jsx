@@ -1,6 +1,4 @@
 import React from 'react'
-import style from './../index.module.css'
-import fStyle from '../../../index.module.css'
 
 const AttrRow = (props) => {
     let value = props.actions({page:"statData", list:"stats", tag:props.values.parent, state: props.state })
@@ -9,11 +7,11 @@ const AttrRow = (props) => {
         value: value.count
     })
     
-    props.dispatcher({
+    props.dispatcher.stat({
         state: props.state,
         actions: props.actions,
         dispatcher: props.dispatcher,
-        list: "attrib_change",
+        list: "attrib",
         tag: props.values.tag,
         value: max
     })
@@ -37,7 +35,7 @@ const AttrRow = (props) => {
 const MAX = (props) => {
     switch (props.tag) {
         case "san": return props.value * 5
-        case "bp": return props.value*5 - props.value
+        case "bp": return props.value * 5 - props.value
         default: return props.value
     }
 }

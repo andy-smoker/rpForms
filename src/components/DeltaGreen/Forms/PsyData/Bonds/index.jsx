@@ -22,14 +22,14 @@ export const Bonds = (props) => {
             <div className={style.row}>
                 <div className={`${props.formStyle.cell} ${style.add}`}>
                     
-                        <button onClick={() => props.dispatcher({
+                        <button onClick={() => props.dispatcher.psy({
                             state: props.state,
                             actions: props.actions,
                             dispatcher: props.dispatcher,
                             list: "bond_add",
                         })}> + </button>
 
-                        <button onClick={() => props.dispatcher({
+                        <button onClick={() => props.dispatcher.psy({
                             state: props.state,
                             actions: props.actions,
                             dispatcher: props.dispatcher,
