@@ -1,5 +1,5 @@
-const state = {
-    form: {
+const formState = {
+    
         statData: {
             stats: [
                 { view: "Сила (STR)", tag: "strg", count: 0, dist: "" },
@@ -110,7 +110,7 @@ const state = {
             {title: "Солдат", value:"slosger", check: false},
             {title: "Моряк", value:"marine", check: false},
         ]
-    }
+    
 }
 
-export default state
+export default formState

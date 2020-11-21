@@ -1,6 +1,4 @@
-import actions from '../../actions'
-
-export const points = (s, a) => {
+export const points = (s, a, actions) => {
     switch (a.type) {
         case actions.SKILL_POINTS:
             if (a.max >= 0) {

@@ -1,6 +1,4 @@
-import actions from '../../actions/SkillSets'
-
-export const skills = (s, a) => {
+export const skills = (s, a, actions) => {
  
     console.log(s)
     switch (a.type){

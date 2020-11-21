@@ -1,10 +1,7 @@
-import action from '../../actions/PsyData'
-
-export const psyData = (s, a) => {
-    let tmp
+export const psyData = (s, a, actions) => {
     debugger
     switch (a.type) {
-        case action.CHANGE_BOND:
+        case actions.CHANGE_BOND:
             (s.bonds).map(e => {
                 if (e.tag === a.tag) {
                     debugger
@@ -12,14 +9,14 @@ export const psyData = (s, a) => {
                 }
             })
             break
-        case action.ADD_BOND:
+        case actions.ADD_BOND:
             (s.bonds).push(
                 {tag:(s.bonds).length, value: "", score: 0, parent:"cha"}
             )
                 break
-        case action.DELETE_BOND :
+        case actions.DELETE_BOND :
             (s.bonds).pop()
-        case action.CHANGE_MOTIV:
+        case actions.CHANGE_MOTIV:
             s.bonds.motiv = a.value
             break
         default: break

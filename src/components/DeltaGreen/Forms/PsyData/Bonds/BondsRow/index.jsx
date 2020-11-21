@@ -5,7 +5,8 @@ export const BondsRow = (props) => {
     return (
         <div className={props.style.row}>
             <div className={`${props.formStyle.cell}`} >
-                <input value={props.values.value} type='text' name={'bond' + props.serial} onInput={e => props.dispatcher({
+                <input value={props.values.value} type='text' name={'bond' + props.serial} 
+                onInput={e => props.dispatcher.psy({
                     state: props.state,
                     actions: props.actions,
                     dispatcher: props.dispatcher,

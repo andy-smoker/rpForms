@@ -1,10 +1,7 @@
-
-import action from '../../actions/PerData'
-
-export const perData = (s, a) => {
+export const perData = (s, a, actions) => {
     debugger
     switch (a.type) {
-        case action.CHANGE_PER:
+        case actions.CHANGE_PER:
             s.map(e => {
                 if (e.tag === a.tag) {
                     if (Array.isArray(e.value)){
@@ -25,7 +22,7 @@ export const perData = (s, a) => {
                 return
             })
             return s
-        case action.GET_PER:
+        case actions.GET_PER:
             return get(a.tag)
         default:
             return s
