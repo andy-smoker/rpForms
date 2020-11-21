@@ -37,7 +37,7 @@
     grid-template-areas: 
     'tper per per per'
     'tstat stat tpsy psy'
-    'tskill points points pattern'
+    'tskill points points points'
     'tskill skills skills skills';
 
     grid-template-columns: 5% 45% 5% 45%;

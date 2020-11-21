@@ -1,19 +1,29 @@
 import React, { useState } from 'react'
+import { isEmptyBindingElement } from 'typescript'
 import style from './index.module.css'
 
 export const SkillRow = (props) => {
- 
+    let additions = props.actions({page: "additions", state:props.state} )
+    let addition
     return (
         <dev className={style.skill} >
             <dev className={`${props.formStyle.cell} ${style.cell}`}>
-                <input type='checkbox'  name={props.skill.tag} onClick={e=>{
+                <input type='checkbox' disabled={additions.some(e =>{return e.tag == props.skill.tag? addition={con: e.con, default: e.default} : false})? false : true} 
+                name={props.skill.tag} onClick={e =>{
+                    props.dispatcher.skill({
+                        state: props.state,
+                        dispatcher: props.dispatcher,
+                        actions: props.actions,
+                        list: "con",
+                        tag: props.skill.tag,
+                        value: e.target.checked ? addition.con: addition.default,
+                    })
                     console.log(e.target.checked)
-                }}/>
+                        }} />
+                
                 <p>{props.skill.name}</p>
                 <div>
-
                     <button onClick={() => {
-                        
                         props.dispatcher.skill({
                             state: props.state,
                             dispatcher: props.dispatcher,

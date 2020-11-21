@@ -2,7 +2,7 @@
     
     display: grid;
     grid-template-areas: 
-    'name curator occup '
+    'name curator concept '
     'prof  nation occup '
     'gender age occup '
     'look look occup';
@@ -11,7 +11,9 @@
     grid-template-rows: auto;
 
 }
-
+.concept {
+    grid-area: concept;
+}
 .look {
     grid-area: look;
 }

@@ -16,7 +16,16 @@ function CHANGE_CON(tag, value) {
     }
 }
 
+function CHECK_ADDITION(tag, value) {
+    return {
+        type: actions.CHECK_ADDITION,
+        tag: tag,
+        value: value,
+    }
+}
+
 export default {
+    CHECK_ADDITION,
     CHANGE_MOD,
     CHANGE_CON
 }

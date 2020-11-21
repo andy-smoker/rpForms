@@ -1,6 +1,7 @@
-export const points = (s, a, actions) => {
+export const points = (s, a, action) => {
+    debugger
     switch (a.type) {
-        case actions.SKILL_POINTS:
+        case action:
             if (a.max >= 0) {
                 s.current = s.current - a.value
             }

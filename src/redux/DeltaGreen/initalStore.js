@@ -110,7 +110,6 @@ const formState = {
             {title: "Солдат", value:"slosger", check: false},
             {title: "Моряк", value:"marine", check: false},
         ]
-    
 }
 
 export default formState

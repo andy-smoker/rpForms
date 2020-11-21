@@ -40,8 +40,6 @@ function getElemet(props) {
             tmp = tmp[props.tag]
             
             return tmp
-
-
         case "skills":
             if (props.tag == undefined) {
                 return tmp
@@ -56,9 +54,47 @@ function getElemet(props) {
             return ret
         case "skillsPoints":
             return tmp
+        case "list":
+            return state.deltagreen.concept
+        case "additions":
+            tmp = state.deltagreen.concept
+            let concept
+            (tmp.list).map(e => {
+                if (e.choose == true) {
+                    concept = e.value
+                }
+            })
+            return tmp.concepts[concept].additionslSkills
         default:
             return 0
     }
 }
+
+export const Concepts = (props) => {
+    debugger
+    const state = props.state.getState()
+    let tmp = state.deltagreen.concept
+    switch (props.list) {
+       case "list":
+           (tmp[props.list]).map(e =>{
+               if (e.choose == true){
+                   return e.value
+               }
+           })
+        case "addtions":
+            return tmp.concept[
+                (tmp.list).map(e =>{
+                    if (e.choose == true){
+                        return e.value
+                    }
+                })
+            ].additionslSkills
+    
+        default:
+            return 0
+    }
+}
+
+
 
 export default getElemet

@@ -6,6 +6,7 @@ import { Footer } from './components/Footer';
 import Content from './components/Content';
 
 function App(props) {
+  console.log(props.state.getState())
   return (
 
       <div className='main_page'>

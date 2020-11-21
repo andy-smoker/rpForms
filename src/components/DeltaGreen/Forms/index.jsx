@@ -19,12 +19,6 @@ export const Form = (props) => {
             <div className={`${style.cell} ${style.points}`}> 
                 Очки навыков: {props.actions({page:"skillsPoints", state:props.state}).current}
             </div>
-            <div className={`${style.cell} ${style.pattern}`}>
-                Типаж: <select>
-                    <option> </option>
-                    <option> Криминалист </option>
-                </select>
-            </div>
             <Title text='НАБОР НАВЫКОВ' style={style.title} subStyle="skills"/>
             <SkillSets style={style} state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
             <div>

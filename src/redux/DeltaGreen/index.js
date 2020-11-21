@@ -1,20 +1,37 @@
 import {combineReducers} from 'redux'
 import formState from './initalStore'
 import {form as formStore} from './reducers/form'
-import concepts from './Concepts'
-import actiond from './actions'
+import conceptsState from './ConceptsState'
+import conStore from './reducers/concept'
 import actions from './actions'
 
-const concept = (s = concepts, a) => {
-    return formStore(s, a)
+const concept = (s = conceptsState, a) => {
+    return conStore(s,a)
 }
 
 const form = (s = formState, a) => {
+    debugger
+    switch (a.type) {
+        case actions.CHOOSE_COCEPT:
+            (conceptsState.list).some(e => {
+                debugger
+                return e.value == a.tag ? e.choose = true : e.choose = false
+                 
+            })
+            s.psyData.bonds = conceptsState.concepts[a.tag].psyData.bonds
+            s.skillsPoints = conceptsState.concepts[a.tag].skillsPoints
+            s.skills = conceptsState.concepts[a.tag].skills
+            break;
+    
+        default:
+            break;
+    }
     return formStore(s, a, actions)
 }
 
 const deltagreen = combineReducers({
-    form
+    form,
+    concept
 })
 
 export default deltagreen

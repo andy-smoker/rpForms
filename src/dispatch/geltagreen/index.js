@@ -65,11 +65,28 @@ function psy(props) {
 }
 
 function skill(props) {
-    debugger
     switch (props.list) {
         case "mod":
             props.state.dispatch(actions.skills.CHANGE_MOD(props.tag, props.value))
             props.state.dispatch(actions.points.CHANGE({value:props.value, max:props.max}))
+            break
+        case "con":
+            props.state.dispatch(actions.skills.CHANGE_CON(props.tag, props.value))
+        default:
+            break
+    }
+    renderApp({
+        state: props.state,
+        store: props.actions,
+        dispatcher: props.dispatcher
+    })
+}
+
+function concept(props){
+    debugger
+    switch (props.list) {
+        case "choose":
+            props.state.dispatch(actions.CHOOSE_CONCEPT(props.tag))
             break
         default:
             break
@@ -81,8 +98,8 @@ function skill(props) {
     })
 }
 
-
 export default {
+    concept,
     per,
     stat,
     psy,

@@ -1,9 +1,10 @@
 const CHANGE_MOD = "CHANGE_MOD"
 const CHANGE_CON = "CHANGE_CON"
-
+const CHECK_ADDITION = "CHECK_ADDITION"
 
 
 export default {
+    CHECK_ADDITION,
     CHANGE_MOD,
     CHANGE_CON
 }
