@@ -1,13 +1,13 @@
 import * as serviceWorker from './serviceWorker';
 import {renderApp} from './render'
 import state from './redux'
-import store from './store/geltagreen'
-import dispatcher from './dispatch/geltagreen'
+import getter from './getter'
+import dispatcher from './dispatch'
 
 //renderApp(state, state.getState(), store.dispatch, actions)
 renderApp({
   state: state, 
-  store: store,
+  getter: getter,
   dispatcher: dispatcher
 })
 

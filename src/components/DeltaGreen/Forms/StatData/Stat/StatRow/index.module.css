@@ -1,0 +1,28 @@
+
+.cell{
+    grid-area: auto;
+}
+
+.btn{
+    grid-area: auto;
+    width: 1fr;
+}
+
+.cell p {
+    margin: 2px;
+}
+
+.score {
+    grid-area: auto;
+    display: grid;
+    grid-template-areas: 'auto';
+    grid-template-columns: 20% 40% 40%;
+}
+.score input {
+    width: 60%;
+}
+
+.dis input {
+    width: 90%;
+}
+

@@ -15,7 +15,16 @@ function GET(tag) {
     }
 }
 
+
+const CHOOSE_CONCEPT = (tag) => {
+    return {
+        type: actions.CHOOSE_COCEPT,
+        tag: tag,
+    }
+}
+
 export default {
     CHANGE,
-    GET
+    GET,
+    CHOOSE_CONCEPT
 }

@@ -1,21 +1,15 @@
 import actions from '../../actions'
 
-const CHANGE = (tag, value) => {
+const CHANGE_STAT_SCORE = (tag, value) => {
     return {
-        type: actions.stat.CHANGE_STAT,
+        type: actions.stat.CHANGE_STAT_SCORE,
         tag: tag,
         value: value,
     }
 }
 
-const  GET = (tag) => {
-    return {
-        type: actions.stat.GET_STAT,
-        tag: tag,
-    }
-}
 
-const DIST = (tag, value) => {
+const CAHNGE_DIST = (tag, value) => {
     return {
         type: actions.stat.CHANGE_DIST,
         tag: tag,
@@ -23,7 +17,7 @@ const DIST = (tag, value) => {
     }
 }
 
-const ATTRIBS = (tag, value) => {
+const CHANGE_ATTRIBS = (tag, value) => {
     return {
         type: actions.stat.CHANGE_ATTR,
         tag: tag,
@@ -32,8 +26,7 @@ const ATTRIBS = (tag, value) => {
 }
 
 export default {
-    ATTRIBS,
-    CHANGE,
-    GET,
-    DIST
+    CHANGE_ATTRIBS,
+    CAHNGE_DIST,
+    CHANGE_STAT_SCORE
 }

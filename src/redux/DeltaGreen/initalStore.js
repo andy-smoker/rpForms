@@ -10,10 +10,10 @@ const formState = {
                 { view: "Харизма (CHA)", tag: "cha", count: 0,  dist: "" }
             ],
             attribs: [
-                {title:"ЖИЗНЬ (HP)", value:"", tag:"hp", parent:"con" },
-                {title:"СИЛА ВОЛИ (WP)", value:"", tag:"wp", parent:"pow"},
-                {title:"РАССУДОК (SAN)", value: "", tag:"san", parent:"pow"},
-                {title:"ТОЧКА СЛОВМА (BP)", value: "", tag:"bp", parent:"pow"}
+                {title:"ЖИЗНЬ (HP)", value:0, tag:"hp", parent:"con" },
+                {title:"СИЛА ВОЛИ (WP)", value:0, tag:"wp", parent:"pow"},
+                {title:"РАССУДОК (SAN)", value: 0, tag:"san", parent:"pow"},
+                {title:"ТОЧКА СЛОВМА (BP)", value: 0, tag:"bp", parent:"pow"}
             ]
         },
 
@@ -33,7 +33,7 @@ const formState = {
         psyData: {
             
             bonds: [
-                {tag:0, value: "", score: 0, parent:"cha" }
+                {tag:0, value: "", score: 0 }
             ],
             motiv: { text: "" },
             flaws: { voilence: 0 }

@@ -1,9 +1,8 @@
 export const skills = (s, a, actions) => {
- 
     console.log(s)
     switch (a.type){
         case actions.CHANGE_MOD:
-            (s.skills).map(e =>{
+            (s.skills).some(e =>{
                 if (e.tag == a.tag){
                     if  (e.mod == 0 && a.value < 0 || e.mod == 4 && a.value > 0  ){
                         return

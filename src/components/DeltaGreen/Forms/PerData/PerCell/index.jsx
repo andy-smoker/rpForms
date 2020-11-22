@@ -17,44 +17,22 @@ const Input = (props) => {
     switch (props.values.type) {
         case "text" :
             return <input type={props.values.type} name={props.values.tag} value={props.values.value}
-            onInput={e => props.dispatcher.per({
-                state: props.state,
-                actions: props.actions,
-                dispatcher: props.dispatcher,
-                list: "change",
-                tag: props.values.tag,
-                value: e.target.value
-            })}/>
+            onInput={e => {
+                debugger
+                props.dispatcher.change(props.state, props.values.tag, e.target.value)}}/>
         case "radio":
-            let radio = props.values.value
-            return radio.map(e => {
+            return (props.values.value).map(e => {
                 return (
                     <div className={style.inputn}>
                         {e.title}
                         <input type={props.values.type} name={props.values.tag} value={e.value} checked={e.check} 
-                        onClick={() => props.dispatcher.per({
-                            dispatch: props.state.dispatch,
-                            state: props.state,
-                            actions: props.actions,
-                            dispatcher: props.dispatcher,
-                            list: "change",
-                            tag: props.values.tag,
-                            value: e.value
-                        })} />
+                        onClick={() => props.dispatcher.change(props.state, props.values.tag, e.value)} />
                     </div>
                 )
             })
         case "textarea":
             return <textarea name={props.values.tag} value={props.values.value} 
-            onInput={e => props.dispatcher.per({
-                dispatch: props.state.dispatch,
-                state: props.state,
-                actions: props.actions,
-                dispatcher: props.dispatcher,
-                list: "change",
-                tag: props.values.tag,
-                value: e.target.value
-            })}/>
+            onInput={e => props.dispatcher.change(props.state, props.values.tag, e.target.value)}/>
         default:
             return 0
 

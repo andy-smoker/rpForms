@@ -5,13 +5,12 @@ import { Stat } from './Stat'
 import { Attr } from './Attr'
 
 export const StatData = (props) => {
-
     return (
         (<div className={`${style.statdata} ${fStyle.stat}`}>
-            <Stat formStyle={props.style} style={style} state={props.state} actions={props.actions} 
+            <Stat formStyle={props.style} style={style} state={props.state} getter={props.getter} 
             dispatcher={props.dispatcher} />
-            <Attr formStyle={props.style} style={style} state={props.state} actions={props.actions} 
-            dispatcher={props.dispatcher} />
+             <Attr formStyle={props.style} style={style} state={props.state} getter={props.getter} 
+            dispatcher={props.dispatcher} /> 
         </div>)
     )
 }

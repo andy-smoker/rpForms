@@ -5,7 +5,7 @@ import About from './About'
 import style from './index.module.css'
 
 export const DGgeneral = (props) => {
-    //debugger
+    debugger
     const prefix = "dg"
     return (
         <div className={style.mane}>
@@ -21,7 +21,7 @@ export const DGgeneral = (props) => {
                 </NavLink>
             </div>
             <Route path={`/${prefix}/form`} render={() => <Form state={props.state} 
-            actions={props.actions} dispatcher={props.dispatcher}/>} />
+            getter={props.getter} dispatcher={props.dispatcher}/>} />
             <Route path={`/${prefix}/about`} component={About} />
         </div>
     )

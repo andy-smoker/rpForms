@@ -5,8 +5,6 @@ import fStyle from '../../index.module.css'
 import AttrRow from './AttrRow'
 
 export const Attr = (props) => {
-    debugger
-    let rows = props.actions({page:"statData", list:"attribs", state: props.state })
     return (
         <div className={sdStyle.attr}>
             <div className={style.attr_row}>
@@ -14,10 +12,10 @@ export const Attr = (props) => {
                 <div className={`${style.cell} ${fStyle.cell}`} > MAXIMUM </div>
                 <div className={`${style.cell} ${fStyle.cell}`} > CURRENT </div>
             </div>
-            {rows.map(row => {
+            {(props.getter.allAttribs(props.state)).map(row => {
                 return (
                     <AttrRow formStyle={props.formStyle} areaStyle={props.style} style={style} 
-                    values={row} state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
+                    attrib={row} state={props.state} getter={props.getter} dispatcher={props.dispatcher}/>
                 )
             })}
         </div>

@@ -3,15 +3,9 @@ import style from './index.module.css'
 import { BondsRow } from './BondsRow'
 
 export const Bonds = (props) => {
-    const [bonds, setBonds] = useState([
-        { id: 0 }
-    ])
-    debugger
-    let rows = props.actions({ page: "psyData", tag: "bonds", state: props.state })
     return (
         <div className={`${props.formStyle.cell} ${props.style}`}>
             <div className={style.row}>
-
                 <div className={`${props.formStyle.cell} ${style.name}`} >
                     <p> СВЯЗИ </p>
                 </div>
@@ -21,32 +15,15 @@ export const Bonds = (props) => {
             </div>
             <div className={style.row}>
                 <div className={`${props.formStyle.cell} ${style.add}`}>
-                    
-                        <button onClick={() => props.dispatcher.psy({
-                            state: props.state,
-                            actions: props.actions,
-                            dispatcher: props.dispatcher,
-                            list: "bond_add",
-                        })}> + </button>
-
-                        <button onClick={() => props.dispatcher.psy({
-                            state: props.state,
-                            actions: props.actions,
-                            dispatcher: props.dispatcher,
-                            list: "bond_del",
-                        })}> - </button>
-                    
+                        <button onClick={() => props.dispatcher.addBond(props.state)}> + </button>
+                        <button onClick={() => props.dispatcher.delBond(props.state)}> - </button>
                 </div>
             </div >
-
-                {rows.map((row, serial) => {
+                {(props.getter.Bonds(props.state)).map(row => {
                     return (
-                        < BondsRow serial={serial} formStyle={props.formStyle} style={style} values={row} state={props.state}
-                            actions={props.actions} dispatcher={props.dispatcher} />
-                    )
-                })}
-
-
+                        < BondsRow formStyle={props.formStyle} style={style} bond={row}
+                        state={props.state} getter={props.getter} dispatcher={props.dispatcher} />
+                    )})}
         </div>
     )
 }

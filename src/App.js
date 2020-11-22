@@ -12,7 +12,7 @@ function App(props) {
       <div className='main_page'>
         <Header />
         <SideBar />
-        <Content state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
+        <Content state={props.state} getter={props.getter} dispatcher={props.dispatcher}/>
         <Footer />
         <div>
         </div>

@@ -1,5 +1,6 @@
 const ADD_BOND = "ADD_BOND"
 const CHANGE_BOND = "CHANGE_BOND"
+const CHANGE_BOND_SCORE = "CHANGE_BOND_SCORE"
 const DELETE_BOND = "DELETE_BOND"
 const GET_BOND = "GET_BOND"
 
@@ -9,6 +10,7 @@ const GET_MOTIV = "GET_BOND"
 export default {
     ADD_BOND,
     CHANGE_BOND,
+    CHANGE_BOND_SCORE,
     DELETE_BOND,
     GET_BOND,
 

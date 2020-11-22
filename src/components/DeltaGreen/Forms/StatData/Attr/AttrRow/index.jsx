@@ -1,10 +1,10 @@
 import React from 'react'
 
 const AttrRow = (props) => {
-    let value = props.actions({page:"statData", list:"stats", tag:props.values.parent, state: props.state })
+    /*
     let max = MAX({
-        tag: props.values.tag,
-        value: value.count
+        tag: props.attrib.tag,
+        value: props.getter.attribTag(props.state, props.attrib.tag)
     })
     
     props.dispatcher.stat({
@@ -14,16 +14,16 @@ const AttrRow = (props) => {
         list: "attrib",
         tag: props.values.tag,
         value: max
-    })
+    })*/
     
-    debugger
+    console.log(props.attrib)
     return (
         <div className={props.style.attr_row}>
             <div className={` ${props.formStyle.cell}`}> 
-                <p>{props.values.title}</p> 
+                <p>{props.attrib.title}</p> 
             </div>
             <div className={` ${props.formStyle.cell}`}> 
-                <p name={'max'+props.values.tag} > {max} </p> 
+                <p name={'max'+props.attrib.tag} > {props.attrib.value} </p> 
             </div>
             <div className={`${props.formStyle.cell}`}> 
                 {/* <input type='text'name={'curr'+props.values.tag}/>  */}

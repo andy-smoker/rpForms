@@ -6,7 +6,7 @@ export const Flaws = (props) => {
     return (
         <div className={props.style}>
             <div className={`${props.formStyle.cell} ${style.title}`}>
-                <p>13. ИНЦИДЕНТЫ ПОТЕРИ РАССУДКА БЕЗ БЕЗУМИЯ</p>
+                <p>ИНЦИДЕНТЫ ПОТЕРИ РАССУДКА БЕЗ БЕЗУМИЯ</p>
             </div>
             <div className={` ${props.formStyle.cell} ${style.cell}`}>
                 <p>НАСИЛИЕ</p>

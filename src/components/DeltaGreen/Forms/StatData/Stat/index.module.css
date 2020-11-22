@@ -12,21 +12,3 @@
     
 }
 
-.cell{
-    grid-area: auto;    
-}
-.cell p {
-    margin: 2px;
-}
-
-.score {
-    grid-area: auto;
-}
-.score input {
-    width: 60%;
-}
-
-.dis input {
-    width: 90%;
-}
-

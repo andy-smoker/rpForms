@@ -4,10 +4,9 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom'
 
 export function renderApp(props) {
-  //debugger
   ReactDOM.render(
     <BrowserRouter>
-      <App state={props.state} actions={props.store} dispatcher={props.dispatcher}/>
+      <App state={props.state} getter={props.getter} dispatcher={props.dispatcher}/>
     </BrowserRouter>,
     document.getElementById('root')
   );

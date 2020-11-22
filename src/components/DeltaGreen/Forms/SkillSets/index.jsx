@@ -6,14 +6,9 @@ import { SkillRow } from './SkillRow'
 
 export const SkillSets = (props) => {
     let rows = props.actions({page:"skills", state:props.state})
-
-    
-    
     return (
         <div className={`${props.style.skills} ${style.main}`}>
-
-            <div>
-                
+            <div className={style.rows}>
                 {rows.map(row => {
                     console.log(row)
                     return (
@@ -22,13 +17,23 @@ export const SkillSets = (props) => {
                     )
                 })} 
             </div>
-
             <div className={`${style.other}`} >
-                <dev className={`${style.row} ${props.style.cell}`} >
+                <div className={`${style.row} ${props.style.cell}`} >
                     <p> Языки и другие навыки </p>
-                </dev>
-                {/* <SkillRow name={<input type='text' />} /> */}
-            
+                    <div>
+                        <button> + </button>
+                        <button> - </button>
+                    </div>
+                </div>
+                <div className={`${style.row} ${props.style.cell}`} >
+                    <div className={`${style.cell} ${props.style.cell}`}>
+                        <input type="text" />
+                        <input type='checkbox' />
+                    </div>
+                    <div className={`${style.cell} ${props.style.cell}`}>
+                        <p> 0 </p> 
+                    </div>
+                </div>
             </div>
         </div>
     )

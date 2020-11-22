@@ -11,11 +11,13 @@ export const Form = (props) => {
     return (
         <div className={style.chsh}>
             <Title text='ПЕРСОНАЛЬНЫЕ ДАННЫЕ' style={style.title} subStyle="per"/>
-            <PerData style={style} state={props.state} actions={props.actions} dispatcher={props.dispatcher} />
-            <Title text='СТАТИСТИЧЕСКАЯ ИНФОРМАЦИЯ' style={style.title} subStyle="stat"/>
-            <StatData style={style} state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
+            <PerData style={style} state={props.state} getter={props.getter} dispatcher={props.dispatcher.per} />
             <Title text='ПСИХОЛОГИЧЕСКАЯ ИНФОРМАЦИЯ' style={style.title} subStyle="psy"/>
-            <PsyData  style={style} state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
+            <PsyData  style={style} state={props.state} getter={props.getter.psy} dispatcher={props.dispatcher.psy}/>
+            
+            <Title text='СТАТИСТИЧЕСКАЯ ИНФОРМАЦИЯ' style={style.title} subStyle="stat"/>
+            <StatData style={style} state={props.state} getter={props.getter.stat} dispatcher={props.dispatcher.stat}/>
+            {/*
             <div className={`${style.cell} ${style.points}`}> 
                 Очки навыков: {props.actions({page:"skillsPoints", state:props.state}).current}
             </div>
@@ -28,7 +30,7 @@ export const Form = (props) => {
             <button className={style.down}>
                 Dowload
             </button>
-            </div>
+            </div> */}
         </div>
     )
 }

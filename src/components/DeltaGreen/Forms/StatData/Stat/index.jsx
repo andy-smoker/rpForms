@@ -5,8 +5,6 @@ import fStyle from '../../index.module.css'
 import { StatRow } from './StatRow'
 
 export const Stat = (props) => {
-    debugger
-    let rows = props.actions({page:"statData", list:"stats", state: props.state })
     return (    
         <div className={sdStyle.stat}>
             <div className={style.stat_row}>
@@ -15,10 +13,10 @@ export const Stat = (props) => {
                 <div className={`${style.cell} ${fStyle.cell}`}> x5=% </div>
                 <div className={`${style.dis} ${fStyle.cell}`}> ОСОБЕННОСТЬ </div>
             </div>
-            {rows.map(row => {
+            {(props.getter.allStats(props.state)).map(row => {
                 return (
                     <StatRow  formStyle={props.formStyle} areaStyle={props.style} style={style} 
-                    values={row} state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
+                    stat={row} state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
                 )
             })}
         </div>
