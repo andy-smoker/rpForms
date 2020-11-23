@@ -12,6 +12,7 @@ export const PerData = (props) => {
             })}
             <div className={`${style.concept} ${props.style.cell}`}>
                 Типаж: <select onChange={e =>{
+                    debugger
                     props.dispatcher.chooseConcept(props.state, e.target.value)}}>
                     {(props.getter.concept.List(props.state)).map(e => {
                         return <option value={e.value}> {e.title}</option>

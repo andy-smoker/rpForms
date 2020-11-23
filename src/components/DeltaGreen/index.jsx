@@ -5,7 +5,7 @@ import About from './About'
 import style from './index.module.css'
 
 export const DGgeneral = (props) => {
-    debugger
+
     const prefix = "dg"
     return (
         <div className={style.mane}>

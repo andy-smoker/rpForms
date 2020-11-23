@@ -73,7 +73,7 @@ const concepts = {
                 flaws: { voilence: 0 }
             },
             skillsPoints: {max: 8, current:8},
-            additionslSkillsPoints: { max: 8, current: 8 },
+            additionslSkillsPoints: { max: 2, current: 2 },
             additionslSkills: [
                 { tag: 'archeology', con: 40, default:0},
                 { tag: 'humint', con: 50, default:0},

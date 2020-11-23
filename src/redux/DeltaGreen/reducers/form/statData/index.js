@@ -37,11 +37,11 @@ const attribs = (s, a, actions) => {
     switch (a.type) {
         case actions.CHANGE_ATTR:
             s.map(e => {
-                if (e.parrent == a.tag) {
-                    e.tag == "wp" ? e.count = a.value * 5 :
-                    e.tag == "bp" ? e.count = a.value * 5 - a.value : 
-                    e.count = a.value
-                    return
+                debugger
+                if (e.parent == a.tag) {
+                    return e.tag == "wp" ? e.value = a.value * 5 :
+                    e.tag == "bp" ? e.value = a.value * 5 - a.value : 
+                    e.value = a.value
                 }
                 return
             })

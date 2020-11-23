@@ -1,8 +1,8 @@
-const Additions = (s) => {
+export const Additions = (s) => {
     const state = s.getState()
     let tmp
-    (state.deltagreen.concept.list).map(e => {
-        return e.choose == true ? state.deltagreen.concepts[e.value].additionslSkills : null
+    (state.deltagreen.concept.list).some(e => {
+        return e.choose == true ? tmp = state.deltagreen.concept.concepts[e.value].additionslSkills : null
     })
     return tmp
 }

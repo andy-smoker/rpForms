@@ -7,7 +7,7 @@ import { PsyData } from './PsyData'
 import { SkillSets } from './SkillSets'
 
 export const Form = (props) => {
-    //debugger;
+    debugger;
     return (
         <div className={style.chsh}>
             <Title text='ПЕРСОНАЛЬНЫЕ ДАННЫЕ' style={style.title} subStyle="per"/>
@@ -17,12 +17,14 @@ export const Form = (props) => {
             
             <Title text='СТАТИСТИЧЕСКАЯ ИНФОРМАЦИЯ' style={style.title} subStyle="stat"/>
             <StatData style={style} state={props.state} getter={props.getter.stat} dispatcher={props.dispatcher.stat}/>
-            {/*
-            <div className={`${style.cell} ${style.points}`}> 
-                Очки навыков: {props.actions({page:"skillsPoints", state:props.state}).current}
-            </div>
             <Title text='НАБОР НАВЫКОВ' style={style.title} subStyle="skills"/>
-            <SkillSets style={style} state={props.state} actions={props.actions} dispatcher={props.dispatcher}/>
+            
+            <div className={`${style.cell} ${style.points}`}> 
+                Очки навыков: {props.getter.skills.getPoints(props.state).current}
+            </div>
+            
+            <SkillSets style={style} state={props.state} getter={props.getter.skills} dispatcher={props.dispatcher.skills}/>
+            {/*
             <div>
             <button className={style.down}>
                 Save

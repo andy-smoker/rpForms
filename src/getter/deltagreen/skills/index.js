@@ -1,3 +1,5 @@
+import {Additions} from '../concept'
+
 // getState all skills
 const All = (s) => {
     const state = s.getState()
@@ -6,7 +8,7 @@ const All = (s) => {
 
 const getPoints = (s) => {
     const state = s.getState()
-    return state.deltagreen.form.skills.Points
+    return state.deltagreen.form.skillsPoints
 
 }
 
@@ -20,7 +22,9 @@ const withTag = (s, tag) => {
     return tmp
 }
 
+
 export default {
+    Additions,
     All,
     getPoints,
     withTag

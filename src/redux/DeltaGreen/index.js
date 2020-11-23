@@ -12,7 +12,7 @@ const concept = (s = conceptsState, a) => {
 const form = (s = formState, a) => {
     debugger
     switch (a.type) {
-        case actions.CHOOSE_COCEPT:
+        case actions.per.CHOOSE_COCEPT:
             (conceptsState.list).some(e => {
                 debugger
                 return e.value == a.tag ? e.choose = true : e.choose = false

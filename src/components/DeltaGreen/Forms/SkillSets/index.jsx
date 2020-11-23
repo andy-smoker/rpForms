@@ -2,17 +2,14 @@ import React, { useEffect, useState } from 'react'
 import style from './index.module.css'
 import { SkillRow } from './SkillRow'
 
-
-
 export const SkillSets = (props) => {
-    let rows = props.actions({page:"skills", state:props.state})
     return (
         <div className={`${props.style.skills} ${style.main}`}>
             <div className={style.rows}>
-                {rows.map(row => {
+                {(props.getter.All(props.state)).map(row => {
                     console.log(row)
                     return (
-                        <SkillRow formStyle={props.style} state={props.state} actions={props.actions}
+                        <SkillRow formStyle={props.style} state={props.state} getter={props.getter}
                             dispatcher={props.dispatcher} skill={row} />
                     )
                 })} 

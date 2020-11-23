@@ -5,6 +5,7 @@ import fStyle from '../../index.module.css'
 import AttrRow from './AttrRow'
 
 export const Attr = (props) => {
+    console.log(props.getter.allAttribs(props.state))
     return (
         <div className={sdStyle.attr}>
             <div className={style.attr_row}>
