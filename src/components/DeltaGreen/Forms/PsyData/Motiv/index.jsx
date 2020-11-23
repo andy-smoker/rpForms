@@ -10,14 +10,7 @@ export const Motiv = (props) => {
                 </div>
                 <div className={`${props.formStyle.cell} ${style.cell}`}>
                     <textarea value={props.getter(props.state)}  onInput={e => {
-                        props.dispatcher.psy({
-                            state: props.state,
-                            dispatcher: props.dispatcher,
-                            actions: props.actions,
-                            list: "motiv",
-                            value: e.target.value
-                        })
-                    }} />
+                        props.dispatcher.enterMotiv(props.state, e.target.value)}} />
                 </div>
             </div>
 

@@ -38,6 +38,8 @@ const formState = {
             motiv: { text: "" },
             flaws: { voilence: 0 }
         },
+
+        additionslSkillsPoints: { max: 0, current: 0},
         skillsPoints: {max: 8, current:8},
         skills: [
             { name: 'Бух.учет', tag: 'accounting', con: 10 , mod:0},

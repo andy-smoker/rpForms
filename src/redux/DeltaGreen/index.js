@@ -20,6 +20,7 @@ const form = (s = formState, a) => {
             })
             s.psyData.bonds = conceptsState.concepts[a.tag].psyData.bonds
             s.skillsPoints = conceptsState.concepts[a.tag].skillsPoints
+            s.additionslSkillsPoints = conceptsState.concepts[a.tag].additionslSkillsPoints
             s.skills = conceptsState.concepts[a.tag].skills
             break;
     

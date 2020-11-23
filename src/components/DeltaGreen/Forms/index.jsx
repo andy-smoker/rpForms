@@ -19,10 +19,12 @@ export const Form = (props) => {
             <StatData style={style} state={props.state} getter={props.getter.stat} dispatcher={props.dispatcher.stat}/>
             <Title text='НАБОР НАВЫКОВ' style={style.title} subStyle="skills"/>
             
-            <div className={`${style.cell} ${style.points}`}> 
+            <div className={`${style.cell} ${style.skillPoints}`}> 
                 Очки навыков: {props.getter.skills.getPoints(props.state).current}
             </div>
-            
+            <div className={`${style.cell} ${style.additionPoints}`}> 
+                Очки дополнительных навыков: {props.getter.skills.AdditionsPoints(props.state).current}
+            </div>
             <SkillSets style={style} state={props.state} getter={props.getter.skills} dispatcher={props.dispatcher.skills}/>
             {/*
             <div>

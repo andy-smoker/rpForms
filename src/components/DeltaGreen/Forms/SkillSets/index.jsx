@@ -7,7 +7,6 @@ export const SkillSets = (props) => {
         <div className={`${props.style.skills} ${style.main}`}>
             <div className={style.rows}>
                 {(props.getter.All(props.state)).map(row => {
-                    console.log(row)
                     return (
                         <SkillRow formStyle={props.style} state={props.state} getter={props.getter}
                             dispatcher={props.dispatcher} skill={row} />

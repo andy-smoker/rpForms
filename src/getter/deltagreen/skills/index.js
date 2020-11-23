@@ -1,4 +1,4 @@
-import {Additions} from '../concept'
+import concept from '../concept'
 
 // getState all skills
 const All = (s) => {
@@ -10,6 +10,11 @@ const getPoints = (s) => {
     const state = s.getState()
     return state.deltagreen.form.skillsPoints
 
+}
+
+const AdditionsPoints = (s) => {
+    const state = s.getState()
+    return state.deltagreen.form.additionslSkillsPoints
 }
 
 // needed params - state, tag
@@ -24,7 +29,8 @@ const withTag = (s, tag) => {
 
 
 export default {
-    Additions,
+    Additions: concept.Additions,
+    AdditionsPoints,
     All,
     getPoints,
     withTag

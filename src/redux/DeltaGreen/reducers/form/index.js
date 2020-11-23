@@ -2,7 +2,8 @@ import { perData } from "./perData"
 import { psyData } from "./psyData"
 import { skills } from "./skills"
 import { statData } from "./statData"
-import {points} from './skillPoints'
+import skillPoints from './skillPoints'
+import additionPoints from './additionPoints'
 
 export const form = (s, a, actions) => {
     return ({
@@ -13,8 +14,11 @@ export const form = (s, a, actions) => {
                 skills:s.skills,
                 points: s.skillsPoints
             }, a, actions.skills),
-            skillsPoints: points(s.skillsPoints, a, actions.SKILL_POINTS),
+            skillsPoints: skillPoints(s.skillsPoints, a, actions.skills.CHANGE_POINTS),
+            additionslSkillsPoints: additionPoints({
+                points:s.additionslSkillsPoints,
+                skills:s.skills
+            }, a, actions.skills.CHANGE_ADDITION_POINTS)
             
-        
     })
 }

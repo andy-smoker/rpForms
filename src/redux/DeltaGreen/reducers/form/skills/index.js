@@ -3,6 +3,7 @@ export const skills = (s, a, actions) => {
     switch (a.type){
         case actions.CHANGE_MOD:
             (s.skills).some(e =>{
+                debugger
                 if (e.tag == a.tag){
                     if  (e.mod == 0 && a.value < 0 || e.mod == 4 && a.value > 0  ){
                         return
@@ -17,7 +18,10 @@ export const skills = (s, a, actions) => {
             break
         case actions.CHANGE_CON:
             (s.skills).some(e => {return e.tag == a.tag ? e.con = a.value : null})
-            
+            break
+        case actions.CHECK_ADDITION: 
+            (s.skills).some(e => {return e.tag == a.tag ? e.choosed = a.value: null})
+        break
         default: break
     }
     return s.skills

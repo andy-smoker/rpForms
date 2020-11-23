@@ -24,15 +24,22 @@ function CHECK_ADDITION(tag, value) {
     }
 }
 
-const  CHANGE_POINTS = (value, max) => {
+const  CHANGE_POINTS = (value,max) => {
     return {
-        type: actions.SKILL_POINTS,
+        type: actions.CHANGE_POINTS,
         value: value,
         max: max
     }
 }
 
+const  CHANGE_ADDITION_POINTS = () => {
+    return {
+        type: actions.CHANGE_ADDITION_POINTS,
+    }
+}
+
 export default {
+    CHANGE_ADDITION_POINTS,
     CHECK_ADDITION,
     CHANGE_MOD,
     CHANGE_CON,

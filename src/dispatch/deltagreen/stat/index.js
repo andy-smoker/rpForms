@@ -15,6 +15,7 @@ const changeScore = (state, tag, value) => {
     })
 }
 const changeDist = (state, tag, value) => {
+    debugger
     state.dispatch(actions.CHANGE_DIST(tag, value))
     renderApp({
         state: state,

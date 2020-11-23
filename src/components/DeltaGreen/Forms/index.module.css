@@ -37,7 +37,7 @@
     grid-template-areas: 
     'tper per per per'
     'tstat stat tpsy psy'
-    'tskill points points points'
+    'tskill sp ap ap'
     'tskill skills skills skills';
 
     grid-template-columns: 5% 45% 5% 45%;
@@ -49,8 +49,11 @@
     grid-area: pattern;
 }
 
-.points{
-    grid-area: points;
+.skillPoints{
+    grid-area: sp;
+}
+.additionPoints{
+    grid-area: ap;
 }
 
 .per{

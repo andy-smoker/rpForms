@@ -2,8 +2,9 @@ import React from 'react'
 import style from './index.module.css'
 
 export const SkillRow = (props) => {
-    console.log(props.getter.Additions(props.state))
+    console.log(props.getter.withTag(props.state, props.skill.tag))
     let addition
+
     return (
         <dev className={style.skill} >
             <dev className={`${props.formStyle.cell} ${style.cell}`}>
@@ -11,12 +12,14 @@ export const SkillRow = (props) => {
                 <input type='checkbox' disabled={
                     (props.getter.Additions(props.state)).some(e => {
                         return e.tag == props.skill.tag ? addition =
-                            { con: e.con, default: e.default } : false
-                    }) ? false : true}
-
+                            { con: e.con, default: e.default } : false}) 
+                            && props.getter.AdditionsPoints(props.state).current != 0
+                        ? false : !props.getter.withTag(props.state, props.skill.tag).choosed}
+                    value={props.getter.withTag(props.state, props.skill.tag).choosed}
                     name={props.skill.tag} onClick={e => {
-                        props.dispatcher.changeCon(props.state, props.skill.tag,
-                            e.target.checked ? addition.con : addition.default)
+                        props.dispatcher.checkAddition(props.state, props.skill.tag,
+                            e.target.checked ? addition.con : 
+                            addition.default, e.target.checked)
                     }} />
                 <div>
                     <button onClick={() => {

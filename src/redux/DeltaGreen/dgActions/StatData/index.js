@@ -9,7 +9,7 @@ const CHANGE_STAT_SCORE = (tag, value) => {
 }
 
 
-const CAHNGE_DIST = (tag, value) => {
+const CHANGE_DIST = (tag, value) => {
     return {
         type: actions.stat.CHANGE_DIST,
         tag: tag,
@@ -27,6 +27,6 @@ const CHANGE_ATTRIBS = (tag, value) => {
 
 export default {
     CHANGE_ATTRIBS,
-    CAHNGE_DIST,
+    CHANGE_DIST,
     CHANGE_STAT_SCORE
 }

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import style from './index.module.css'
-import d from '../../../../../../dispatch/geltagreen'
 
 export const StatRow = (props) => {
     debugger
@@ -22,14 +21,7 @@ export const StatRow = (props) => {
             </div>
             <div className={`${style.cell} ${props.formStyle.cell}`}>  {props.stat.count * 5}%  </div>
             <div className={`${style.dis} ${props.formStyle.cell}`}>  <input type='text'
-                onInput={e => props.dispatcher.stat({
-                    state: props.state,
-                    actions: props.actions,
-                    dispatcher: props.dispatcher,
-                    list: "dist",
-                    tag: props.values.tag,
-                    value: e.target.value
-                })} />
+                onInput={e => props.dispatcher.changeDist(props.state, props.stat.tag, e.target.value)} />
             </div>
         </div>
     )

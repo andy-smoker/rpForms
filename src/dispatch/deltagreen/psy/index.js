@@ -28,6 +28,7 @@ const delBond = (state) => {
     })
 }
 const enterMotiv = (state, value) => {
+    debugger
     state.dispatch(actions.CHANGE_MOTIV(value))
     renderApp({
         state: state,

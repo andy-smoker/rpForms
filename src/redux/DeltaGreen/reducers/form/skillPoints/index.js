@@ -1,4 +1,4 @@
-export const points = (s, a, action) => {
+const points = (s, a, action) => {
     debugger
     switch (a.type) {
         case action:
@@ -12,5 +12,6 @@ export const points = (s, a, action) => {
         default: break
     }
     return s
-
 }
+
+export default points

@@ -14,7 +14,18 @@ const changeMod = (state, tag, value, max) => {
 }
 
 const changeCon = (state, tag, value) => {
-    state.dispatch(actions.skills.CHANGE_CON(tag, value))
+    state.dispatch(actions.CHANGE_CON(tag, value))
+    renderApp({
+        state: state,
+        getter: getter,
+        dispatcher: dispatcher
+    })
+}
+
+const checkAddition = (state,tag, value, bool) => {
+        state.dispatch(actions.CHANGE_CON(tag, value))
+        state.dispatch(actions.CHECK_ADDITION(tag, bool))
+        state.dispatch(actions.CHANGE_ADDITION_POINTS())
     renderApp({
         state: state,
         getter: getter,
@@ -24,5 +35,6 @@ const changeCon = (state, tag, value) => {
 
 export default {
     changeMod,
-    changeCon
+    changeCon,
+    checkAddition
 }

@@ -13,10 +13,10 @@ const concepts = {
                 flaws: { voilence: 0 }
             },
 
-            additionslSkillsPoints: { max: 8, current: 8 },
+            additionslSkillsPoints: { max: 0, current: 0 },
             additionslSkills: [],
 
-            skillsPoints: { max: 8, current: 8 },
+            skillsPoints: { max: 0, current: 0 },
             skills: [
                 { name: 'Бух.учет', tag: 'accounting', con: 10, mod: 0, choosed: false },
                 { name: 'Бдительность', tag: 'alertness', con: 20, mod: 0, choosed: false },
