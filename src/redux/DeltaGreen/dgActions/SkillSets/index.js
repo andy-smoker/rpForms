@@ -38,7 +38,30 @@ const  CHANGE_ADDITION_POINTS = () => {
     }
 }
 
+const ADD_SKILL = () => {
+    return{
+        type: actions.ADD_SKILL
+    }
+}
+
+const DEL_SKILL = () => {
+    return{
+        type: actions.DEL_SKILL
+    }
+}
+
+const CHANGE_OTHER = (tag, value) => {
+    return {
+        type: actions.CHANGE_OTHER,
+        tag: tag,
+        value: value,
+    }
+}
+
 export default {
+    ADD_SKILL,
+    DEL_SKILL,
+    CHANGE_OTHER,
     CHANGE_ADDITION_POINTS,
     CHECK_ADDITION,
     CHANGE_MOD,

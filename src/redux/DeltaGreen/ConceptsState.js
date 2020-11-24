@@ -61,6 +61,7 @@ const concepts = {
                 { name: 'Драка', tag: 'combat', con: 40, mod: 0, choosed: false },
                 { name: 'Необъяснимое', tag: 'unnatural', con: 0, mod: 0, choosed: false },
             ],
+            otherSkills:[]
         },
         anthrop: {
             psyData: {
@@ -81,6 +82,7 @@ const concepts = {
                 { tag: 'ride', con: 50, default:10},
                 { tag: 'search', con: 60, default:20},
                 { tag: 'survival', con: 50, default:10},
+                {tag: '0', con: 40, default: 0}
             ],
 
             skills: [
@@ -127,6 +129,9 @@ const concepts = {
                 { name: 'Драка', tag: 'combat', con: 40, mod: 0, choosed: false },
                 { name: 'Необъяснимое', tag: 'unnatural', con: 0, mod: 0, choosed: false },
             ],
+            otherSkills:[
+                { name: 'Староанглийский', tag: '0', con: 0, mod: 0, choosed: false },
+            ]
         },
     }
 /*

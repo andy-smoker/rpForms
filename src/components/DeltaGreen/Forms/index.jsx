@@ -26,15 +26,18 @@ export const Form = (props) => {
                 Очки дополнительных навыков: {props.getter.skills.AdditionsPoints(props.state).current}
             </div>
             <SkillSets style={style} state={props.state} getter={props.getter.skills} dispatcher={props.dispatcher.skills}/>
-            {/*
+            
             <div>
-            <button className={style.down}>
+            <button className={style.down} onClick={() =>{
+                debugger;
+                
+            }}>
                 Save
             </button>
             <button className={style.down}>
                 Dowload
             </button>
-            </div> */}
+            </div>
         </div>
     )
 }

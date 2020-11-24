@@ -2,9 +2,8 @@ import React from 'react'
 import style from './index.module.css'
 
 export const SkillRow = (props) => {
-    console.log(props.getter.withTag(props.state, props.skill.tag))
     let addition
-
+    
     return (
         <dev className={style.skill} >
             <dev className={`${props.formStyle.cell} ${style.cell}`}>
@@ -15,12 +14,14 @@ export const SkillRow = (props) => {
                             { con: e.con, default: e.default } : false}) 
                             && props.getter.AdditionsPoints(props.state).current != 0
                         ? false : !props.getter.withTag(props.state, props.skill.tag).choosed}
-                    value={props.getter.withTag(props.state, props.skill.tag).choosed}
+                    //value={props.getter.withTag(props.state, props.skill.tag).choosed}
                     name={props.skill.tag} onClick={e => {
                         props.dispatcher.checkAddition(props.state, props.skill.tag,
                             e.target.checked ? addition.con : 
                             addition.default, e.target.checked)
-                    }} />
+                    }}
+                    checked={props.getter.withTag(props.state, props.skill.tag).choosed}
+                    />
                 <div>
                     <button onClick={() => {
                         props.dispatcher.changeMod(props.state, props.skill.tag, 1, props.skill.mod + 1)

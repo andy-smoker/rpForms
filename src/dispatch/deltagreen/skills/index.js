@@ -33,8 +33,37 @@ const checkAddition = (state,tag, value, bool) => {
     })
 }
 
+const changeOther = (state, tag, value) => {
+    state.dispatch(actions.CHANGE_OTHER(tag, value))
+    renderApp({
+        state: state,
+        getter: getter,
+        dispatcher: dispatcher
+    })
+}
+const addOther = (state) => {
+    state.dispatch(actions.ADD_SKILL())
+    renderApp({
+        state: state,
+        getter: getter,
+        dispatcher: dispatcher
+    })
+}
+const delOther = (state) => {
+    state.dispatch(actions.DEL_SKILL())
+    renderApp({
+        state: state,
+        getter: getter,
+        dispatcher: dispatcher
+    })
+}
+
 export default {
     changeMod,
     changeCon,
-    checkAddition
+    checkAddition,
+
+    changeOther,
+    addOther,
+    delOther
 }

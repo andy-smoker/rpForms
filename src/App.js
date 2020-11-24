@@ -5,11 +5,13 @@ import { SideBar } from './components/SideBar';
 import { Footer } from './components/Footer';
 import Content from './components/Content';
 
+
 function App(props) {
   console.log(props.state.getState())
   return (
 
       <div className='main_page'>
+        
         <Header />
         <SideBar />
         <Content state={props.state} getter={props.getter} dispatcher={props.dispatcher}/>

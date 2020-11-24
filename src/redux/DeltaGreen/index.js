@@ -22,6 +22,7 @@ const form = (s = formState, a) => {
             s.skillsPoints = conceptsState.concepts[a.tag].skillsPoints
             s.additionslSkillsPoints = conceptsState.concepts[a.tag].additionslSkillsPoints
             s.skills = conceptsState.concepts[a.tag].skills
+            s.otherSkills = conceptsState.concepts[a.tag].otherSkills
             break;
     
         default:

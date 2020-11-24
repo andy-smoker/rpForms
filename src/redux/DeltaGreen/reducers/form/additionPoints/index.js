@@ -7,7 +7,11 @@ const points = (s, a, action) => {
             (s.skills).map(e => {
                 debugger
                 return e.choosed == true ? s.points.current = s.points.current - 1 : null
-            })
+            });
+            (s.other).map(e => {
+                debugger
+                return e.choosed == true ? s.points.current = s.points.current - 1 : null
+            });
             break
         default: break
     }

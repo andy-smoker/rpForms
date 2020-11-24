@@ -2,51 +2,43 @@ import React from 'react'
 import style from './index.module.css'
 
 export const SkillRow = (props) => {
-    let additions = props.actions({ page: "additions", state: props.state })
     let addition
+    
     return (
         <dev className={style.skill} >
             <dev className={`${props.formStyle.cell} ${style.cell}`}>
-                <p>{props.skill.name}</p>
-                <input type='checkbox' disabled={additions.some(e => { return e.tag == props.skill.tag ? addition = { con: e.con, default: e.default } : false }) ? false : true}
+                <input value={props.skill.name} onInput={e => {
+                    props.dispatcher.changeOther(props.state, props.skill.tag, e.target.value)
+                }} />
+                
+                 <input type='checkbox' disabled={
+                    (props.getter.Additions(props.state)).some(e => {
+                        return e.tag == props.skill.tag ? addition =
+                            { con: e.con, default: e.default } : false}) 
+                            && props.getter.AdditionsPoints(props.state).current != 0
+                        ? false : !props.getter.otherTag(props.state, props.skill.tag).choosed}
+                    value={props.getter.otherTag(props.state, props.skill.tag).choosed}
                     name={props.skill.tag} onClick={e => {
-                        props.dispatcher.skill({
-                            state: props.state,
-                            dispatcher: props.dispatcher,
-                            actions: props.actions,
-                            list: "con",
-                            tag: props.skill.tag,
-                            value: e.target.checked ? addition.con : addition.default,
-                        })
-                        console.log(e.target.checked)
-                    }} />
+                        props.dispatcher.checkAddition(props.state, props.skill.tag,
+                            e.target.checked ? addition.con : 
+                            addition.default, e.target.checked)
+                    }}
+                    checked={props.getter.otherTag(props.state, props.skill.tag).choosed}
+                    />
                 <div>
                     <button onClick={() => {
-                        props.dispatcher.skill({
-                            state: props.state,
-                            dispatcher: props.dispatcher,
-                            actions: props.actions,
-                            list: "mod",
-                            tag: props.skill.tag,
-                            value: 1,
-                            max: props.skill.mod + 1
-                        })
+                        props.dispatcher.changeMod(props.state, props.skill.tag, 1, props.skill.mod + 1)
                     }}> + </button>
+
                     <button onClick={() => {
-                        props.dispatcher.skill({
-                            state: props.state,
-                            dispatcher: props.dispatcher,
-                            actions: props.actions,
-                            list: "mod",
-                            tag: props.skill.tag,
-                            value: -1,
-                            max: props.skill.mod - 1
-                        })
+                        props.dispatcher.changeMod(props.state, props.skill.tag, -1, props.skill.mod - 1)
                     }}> - </button>
                 </div>
             </dev>
             <dev className={`${props.formStyle.cell}`}>
-                <p>{UpdateCon(props.actions({ page: "skills", tag: props.skill.tag, state: props.state }).con, props.skill.mod)}</p>
+ 
+                <p>{UpdateCon(props.getter.otherTag(props.state, props.skill.tag).con, props.skill.mod)}</p>
+             
             </dev>
         </dev>)
 
@@ -62,3 +54,5 @@ const UpdateCon = (con, mod) => {
         return con
     }
 }
+
+export default SkillRow
